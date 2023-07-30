@@ -11,7 +11,7 @@ import {
 
 const links = [
   {
-    href: "/#showcase",
+    href: "/#",
     to: "showcase",
     content: "INÍCIO",
     label: "ir para o inicio",
