@@ -32,7 +32,8 @@ export const Cards = styled.div`
   }
 `
 export const Card = styled.div`
-  max-width: 248px;
+  min-width: 248px;
+  min-height: 120px;
   padding: 1rem;
 
   display: flex;

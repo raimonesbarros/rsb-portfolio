@@ -39,13 +39,15 @@ declare interface PostHeaderProps {
 }
 
 declare interface CurrentPostType {
-  html_url: string
-  title: string
-  created_at: string
-  comments: number
-  body: string
-  user: {
-    login: string
+  post: {
+    html_url: string
+    title: string
+    created_at: string
+    comments: number
+    body: string
+    user: {
+      login: string
+    }
   }
 }
 

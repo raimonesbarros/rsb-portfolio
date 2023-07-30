@@ -1,6 +1,6 @@
 import { api } from "~/lib"
 import { Posts, EmptyBlog } from "./components"
-import { NextSeo, useEffect, useForm, useRouter, useState } from "~/modules"
+import { NextSeo, useForm, useRouter, useState } from "~/modules"
 import {
   BlogContainer,
   BlogInfo,
@@ -13,9 +13,10 @@ import {
 } from "./styles"
 import { SEOBlog } from "~/utils/next-seo/blog"
 import { Footer, Header } from "../components"
+import { GetStaticProps } from "next"
 
-const Blog = () => {
-  const [issues, setIssues] = useState<IssueInfoType>(Object)
+const Blog = (props: IssueInfoType) => {
+  const [issues, setIssues] = useState<IssueInfoType>(props)
   const navigate = useRouter()
   const {
     register,
@@ -45,16 +46,11 @@ const Blog = () => {
     navigate.push(`/blog/post/${postNumber}`)
   }
 
-  useEffect(() => {
-    fetchIssues()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
     <>
+      <NextSeo {...SEOBlog} />
       <Header />
       <BlogContainer>
-        <NextSeo {...SEOBlog} />
         <BlogInfo>
           <Text>Publicações</Text>
           <Span>
@@ -97,3 +93,21 @@ const Blog = () => {
 }
 
 export default Blog
+
+export const getStaticProps: GetStaticProps = async () => {
+  const issues = await api.get(`/search/issues`, {
+    params: {
+      q: `repo:raimonesbarros/github-blog`,
+      _sort: "created_at",
+      _order: "desc",
+    },
+  })
+
+  return {
+    props: {
+      total_count: issues.data.total_count,
+      items: issues.data.items,
+    },
+    revalidate: 60 * 60 * 2, // 2 hours
+  }
+}
