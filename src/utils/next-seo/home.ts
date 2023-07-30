@@ -13,7 +13,7 @@ export const SEOMain: SEOProps = {
     description,
     images: [
       {
-        url: "https://raimones-portfolio.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio.fb8ae99c.png&w=640&q=75",
+        url: "https://raimones-portfolio.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome.4f9ce188.png&w=3840&q=75",
         alt: title,
         width: 1280,
         height: 720,
