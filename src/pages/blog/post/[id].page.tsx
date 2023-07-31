@@ -40,7 +40,12 @@ export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: [
+      { params: { id: "1" } },
+      { params: { id: "2" } },
+      { params: { id: "3" } },
+      { params: { id: "4" } },
+    ],
     fallback: true,
   }
 }
@@ -50,13 +55,10 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
 }) => {
   const postId = params?.id
 
-  let post = null
-  try {
-    post = await api.get(`/repos/raimonesbarros/github-blog/issues/${postId}`)
-  } catch (error) {
-    console.log(error)
-  }
-
+  const post = await api.get(
+    `/repos/raimonesbarros/github-blog/issues/${postId}`
+  )
+  console.log(post.data)
   return {
     props: {
       post: post?.data,

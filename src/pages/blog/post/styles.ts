@@ -48,6 +48,7 @@ export const Fallback = styled.div`
   justify-content: center;
 
   img {
+    height: auto;
     animation: fallbackAnimation 1s ease-in-out infinite;
   }
 `
