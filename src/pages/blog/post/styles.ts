@@ -35,15 +35,19 @@ export const PostContent = styled.article`
 `
 export const Fallback = styled.div`
   @keyframes fallbackAnimation {
-    to {
-      width: 110%;
+    50% {
+      width: 40px;
+      height: 25px;
     }
   }
 
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  svg {
+  img {
     animation: fallbackAnimation 1s ease-in-out infinite;
   }
 `
