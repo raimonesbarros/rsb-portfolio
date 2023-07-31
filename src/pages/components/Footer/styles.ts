@@ -47,6 +47,7 @@ export const Text = styled.p`
   }
 
   .brand {
+    width: fit-content;
     height: 0.875rem;
     display: flex;
     align-items: center;
