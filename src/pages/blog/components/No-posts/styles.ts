@@ -1,6 +1,7 @@
 import { styled } from "~/modules"
 
 export const EmptyBlogContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

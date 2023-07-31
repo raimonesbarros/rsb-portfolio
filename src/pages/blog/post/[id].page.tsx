@@ -1,31 +1,13 @@
+import { Footer, Header, HandleFallback } from "~/pages/components"
 import { PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
-import { Footer, Header } from "~/pages/components"
-import { ReactMarkdown, useDinamicRouter, useState } from "~/modules"
-import HandleFallback from "~/pages/components/Fallback"
-import { GetStaticPaths, GetStaticProps } from "next"
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [{ params: { id: "1" } }],
-    fallback: true,
-  }
-}
-
-export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
-  params,
-}) => {
-  const postId = params?.id
-  const response = await api.get(
-    `/repos/raimonesbarros/github-blog/issues/${postId}`
-  )
-
-  return {
-    props: { post: response.data },
-    revalidate: 60 * 60 * 0.5, // 30 min
-  }
-}
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  ReactMarkdown,
+  useDinamicRouter,
+} from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
@@ -49,3 +31,37 @@ const Post = ({ post }: CurrentPostType) => {
 }
 
 export default Post
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await api.get(`/search/issues`, {
+    params: {
+      q: `repo:raimonesbarros/github-blog`,
+      _sort: "created_at",
+      _order: "desc",
+    },
+  })
+
+  const items = res.data.items
+
+  const paths = items.map((item: any) => ({
+    params: {
+      id: item.number.toString(),
+    },
+  }))
+
+  return { paths, fallback: true }
+}
+
+export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
+  params,
+}) => {
+  const postId = params?.id
+  const response = await api.get(
+    `/repos/raimonesbarros/github-blog/issues/${postId}`
+  )
+
+  return {
+    props: { post: response.data },
+    revalidate: 60 * 60 * 1, // 1 Hour
+  }
+}
