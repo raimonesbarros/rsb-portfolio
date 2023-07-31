@@ -11,12 +11,9 @@ import {
 
 const About = () => {
   const handleDownload = () => {
-    // using Java Script method to get PDF file
     fetch("Raimones-dev-Curriculo.pdf").then((response) => {
       response.blob().then((blob) => {
-        // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob)
-        // Setting various property values
         let alink = document.createElement("a")
         alink.href = fileURL
         alink.download = "Raimones-dev-Curriculo.pdf"

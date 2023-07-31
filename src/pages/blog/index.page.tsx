@@ -3,9 +3,9 @@ import { Posts, EmptyBlog } from "./components"
 import { SEOBlog } from "~/utils/next-seo/blog"
 import { Footer, HandleFallback, Header } from "../components"
 import {
-  GetServerSideProps,
   NextSeo,
   useDinamicRouter,
+  useEffect,
   useForm,
   useRouter,
   useState,
@@ -53,9 +53,13 @@ const Blog = (props: IssueInfoType) => {
     reset()
   }
 
-  function handlePostVostViewer(postNumber: number | undefined) {
+  function handlePostViewer(postNumber: number | undefined) {
     navigate.push(`/blog/post/${postNumber}`)
   }
+
+  useEffect(() => {
+    fetchIssues()
+  }, [])
 
   return (
     <>
@@ -90,7 +94,7 @@ const Blog = (props: IssueInfoType) => {
                 title={issue.title}
                 createdAt={issue.created_at}
                 body={issue.body}
-                onPostViewer={handlePostVostViewer}
+                onPostViewer={handlePostViewer}
               />
             ))
           ) : (
@@ -104,20 +108,3 @@ const Blog = (props: IssueInfoType) => {
 }
 
 export default Blog
-
-export const getStaticProps: GetServerSideProps = async () => {
-  const issues = await api.get(`/search/issues`, {
-    params: {
-      q: `repo:raimonesbarros/github-blog`,
-      _sort: "created_at",
-      _order: "desc",
-    },
-  })
-
-  return {
-    props: {
-      total_count: issues.data.total_count,
-      items: issues.data.items,
-    },
-  }
-}

@@ -2,15 +2,29 @@ import { PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
 import { Footer, Header } from "~/pages/components"
-import { GetServerSideProps, ReactMarkdown, useDinamicRouter } from "~/modules"
+import { ReactMarkdown, useDinamicRouter, useEffect, useState } from "~/modules"
 import HandleFallback from "~/pages/components/Fallback"
 
-const Post = ({ post }: CurrentPostType) => {
-  const { isFallback } = useDinamicRouter()
+const Post = () => {
+  const [post, setPost] = useState<CurrentPostType>(Object)
+  const { isFallback, query } = useDinamicRouter()
 
   if (isFallback) {
     return <HandleFallback />
   }
+
+  const fetchPost = async () => {
+    const response = await api.get(
+      `/repos/raimonesbarros/github-blog/issues/${query.id}`
+    )
+
+    setPost(response.data)
+  }
+
+  useEffect(() => {
+    fetchPost()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
@@ -27,20 +41,3 @@ const Post = ({ post }: CurrentPostType) => {
 }
 
 export default Post
-
-export const getServerSideProps: GetServerSideProps<
-  any,
-  { id: string }
-> = async ({ params }) => {
-  const postId = params?.id
-
-  const post = await api.get(
-    `/repos/raimonesbarros/github-blog/issues/${postId}`
-  )
-  console.log(post.data)
-  return {
-    props: {
-      post: post?.data,
-    },
-  }
-}
