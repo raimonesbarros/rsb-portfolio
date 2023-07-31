@@ -4,14 +4,23 @@ import {
   ReactMarkdown,
   useDinamicRouter,
 } from "~/modules"
-import { PostContainer, PostContent } from "./styles"
+import { Fallback, PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
 import { Footer, Header } from "~/pages/components"
+import { LogoSvg } from "~/assets"
 
 const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
-  isFallback && <p>Loading...</p>
+
+  if (isFallback) {
+    return (
+      <Fallback>
+        <LogoSvg />
+      </Fallback>
+    )
+  }
+
   return (
     <>
       <Header />
@@ -31,7 +40,7 @@ export default Post
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: true,
   }
 }
 

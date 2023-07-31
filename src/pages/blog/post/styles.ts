@@ -33,3 +33,17 @@ export const PostContent = styled.article`
     font-size: 0.85rem;
   }
 `
+export const Fallback = styled.div`
+  @keyframes fallbackAnimation {
+    to {
+      width: 110%;
+    }
+  }
+
+  width: 100%;
+  height: 100vh;
+
+  svg {
+    animation: fallbackAnimation 1s ease-in-out infinite;
+  }
+`
