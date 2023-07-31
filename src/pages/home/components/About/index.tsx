@@ -29,8 +29,7 @@ const About = () => {
     <AboutSection id="about">
       <AboutContainer>
         <Title>
-          <Span>um pouco</Span>
-          <Strong>Sobre mim</Strong>
+          <Span>um pouco</Span> <Strong>Sobre mim</Strong>
         </Title>
         <BgImage src={me} alt="imagem de fundo: Foto de Raimones" width={400} />
         <AboutContent>

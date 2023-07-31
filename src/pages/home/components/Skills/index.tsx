@@ -17,8 +17,7 @@ const Skills = () => {
     <SkillsSection>
       <SkillsContainer>
         <Title>
-          <Span>algumas</Span>
-          <Strong>Habilidades</Strong>
+          <Span>algumas</Span> <Strong>Habilidades</Strong>
         </Title>
         <Cards>
           <Card>
