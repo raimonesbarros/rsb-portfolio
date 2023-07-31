@@ -108,6 +108,6 @@ export const getStaticProps: GetStaticProps = async () => {
       total_count: issues.data.total_count,
       items: issues.data.items,
     },
-    revalidate: 60 * 60 * 2, // 2 hours
+    revalidate: 60 * 60 * 0.5, // 30 min
   }
 }

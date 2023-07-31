@@ -4,8 +4,11 @@ import { PostHeader } from "./components"
 import { api } from "~/lib"
 import { Footer, Header } from "~/pages/components"
 import { GetStaticPaths, GetStaticProps } from "next"
+import { useRouter } from "next/router"
 
 const Post = ({ post }: CurrentPostType) => {
+  const { isFallback } = useRouter()
+  isFallback && <p>Loading...</p>
   return (
     <>
       <Header />
@@ -24,7 +27,7 @@ export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [{ params: { id: "1" } }, { params: { id: "2" } }],
+    paths: [{ params: { id: "1" } }],
     fallback: "blocking",
   }
 }
@@ -42,6 +45,6 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
     props: {
       post: post.data,
     },
-    revalidate: 60 * 60 * 2, // 2 hours
+    revalidate: 60 * 60 * 0.5, // 30 min
   }
 }
