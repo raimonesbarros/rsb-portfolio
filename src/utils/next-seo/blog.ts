@@ -4,11 +4,11 @@ const description = "Blog do desenvolvedor front-end Raimones Barros"
 export const SEOBlog: SEOProps = {
   title,
   description,
-  canonical: "https://raimones.vercel.app/blog",
+  canonical: "https://raimones-portfolio.vercel.app/blog",
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://raimones.vercel.app/blog",
+    url: "https://raimones-portfolio.vercel.app/blog",
     title,
     description,
     images: [
