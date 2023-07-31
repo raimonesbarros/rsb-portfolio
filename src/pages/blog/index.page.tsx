@@ -1,6 +1,14 @@
 import { api } from "~/lib"
 import { Posts, EmptyBlog } from "./components"
-import { NextSeo, useForm, useRouter, useState } from "~/modules"
+import { SEOBlog } from "~/utils/next-seo/blog"
+import { Footer, Header } from "../components"
+import {
+  GetStaticProps,
+  NextSeo,
+  useForm,
+  useRouter,
+  useState,
+} from "~/modules"
 import {
   BlogContainer,
   BlogInfo,
@@ -11,9 +19,6 @@ import {
   Span,
   Text,
 } from "./styles"
-import { SEOBlog } from "~/utils/next-seo/blog"
-import { Footer, Header } from "../components"
-import { GetStaticProps } from "next"
 
 const Blog = (props: IssueInfoType) => {
   const [issues, setIssues] = useState<IssueInfoType>(props)
@@ -108,6 +113,6 @@ export const getStaticProps: GetStaticProps = async () => {
       total_count: issues.data.total_count,
       items: issues.data.items,
     },
-    revalidate: 60 * 60 * 0.5, // 30 min
+    revalidate: 60 * 60 * 1, // 1 Hour
   }
 }
