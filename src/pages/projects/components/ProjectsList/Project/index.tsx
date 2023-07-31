@@ -13,6 +13,7 @@ const Project = ({
         src={image}
         alt={`página inicial do projeto ${title}`}
         width={300}
+        priority
       />
       <ProjectInfo>
         <Subtitle>{title}</Subtitle>

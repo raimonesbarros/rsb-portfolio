@@ -21,7 +21,12 @@ const Viewer = ({
   return (
     <ViewerContainer>
       <ViewerContent>
-        <FullImage src={image} width={600} alt={`Imagem do projeto ${title}`} />
+        <FullImage
+          src={image}
+          width={600}
+          alt={`Imagem do projeto ${title}`}
+          priority
+        />
         <Subtitle>{title}</Subtitle>
         <Tags>
           {tags.map((tag, i) => {

@@ -1,10 +1,11 @@
 import { api } from "~/lib"
 import { Posts, EmptyBlog } from "./components"
 import { SEOBlog } from "~/utils/next-seo/blog"
-import { Footer, Header } from "../components"
+import { Footer, HandleFallback, Header } from "../components"
 import {
   GetServerSideProps,
   NextSeo,
+  useDinamicRouter,
   useForm,
   useRouter,
   useState,
@@ -23,12 +24,17 @@ import {
 const Blog = (props: IssueInfoType) => {
   const [issues, setIssues] = useState<IssueInfoType>(props)
   const navigate = useRouter()
+  const { isFallback } = useDinamicRouter()
   const {
     register,
     handleSubmit,
     reset,
     formState: { isSubmitting },
   } = useForm()
+
+  if (isFallback) {
+    return <HandleFallback />
+  }
 
   async function fetchIssues(query = "") {
     const response = await api.get(`/search/issues`, {

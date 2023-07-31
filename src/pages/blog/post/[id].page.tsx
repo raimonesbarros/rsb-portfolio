@@ -1,24 +1,15 @@
-import { Fallback, PostContainer, PostContent } from "./styles"
+import { PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
 import { Footer, Header } from "~/pages/components"
-import favicon from "public/favicon.png"
-import {
-  GetServerSideProps,
-  NextImage,
-  ReactMarkdown,
-  useDinamicRouter,
-} from "~/modules"
+import { GetServerSideProps, ReactMarkdown, useDinamicRouter } from "~/modules"
+import HandleFallback from "~/pages/components/Fallback"
 
 const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
 
   if (isFallback) {
-    return (
-      <Fallback>
-        <NextImage src={favicon} width={30} alt="carregnado página" priority />
-      </Fallback>
-    )
+    return <HandleFallback />
   }
 
   return (
