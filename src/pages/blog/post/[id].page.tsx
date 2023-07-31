@@ -1,15 +1,14 @@
-import {
-  GetStaticPaths,
-  GetStaticProps,
-  NextImage,
-  ReactMarkdown,
-  useDinamicRouter,
-} from "~/modules"
 import { Fallback, PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
 import { Footer, Header } from "~/pages/components"
 import favicon from "public/favicon.png"
+import {
+  GetServerSideProps,
+  NextImage,
+  ReactMarkdown,
+  useDinamicRouter,
+} from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
@@ -38,21 +37,10 @@ const Post = ({ post }: CurrentPostType) => {
 
 export default Post
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-      { params: { id: "4" } },
-    ],
-    fallback: true,
-  }
-}
-
-export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
-  params,
-}) => {
+export const getServerSideProps: GetServerSideProps<
+  any,
+  { id: string }
+> = async ({ params }) => {
   const postId = params?.id
 
   const post = await api.get(
@@ -63,6 +51,5 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
     props: {
       post: post?.data,
     },
-    revalidate: 60 * 60 * 1, // 1 Hour
   }
 }
