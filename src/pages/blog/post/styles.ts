@@ -28,4 +28,8 @@ export const PostContent = styled.article`
       content: " 🔗";
     }
   }
+
+  code {
+    font-size: 0.85rem;
+  }
 `

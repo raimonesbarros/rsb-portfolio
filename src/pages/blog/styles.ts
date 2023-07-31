@@ -66,7 +66,7 @@ export const Button = styled.button`
 export const PostContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;
@@ -77,6 +77,7 @@ export const PostContainer = styled.div`
 
     &:hover {
       border: 1px solid ${(p) => p.theme.primary};
+      filter: brightness(1.5);
     }
   }
 `
