@@ -5,7 +5,6 @@ import { Footer, HandleFallback, Header } from "../components"
 import {
   NextSeo,
   useDinamicRouter,
-  useEffect,
   useForm,
   useRouter,
   useState,
@@ -20,6 +19,27 @@ import {
   Span,
   Text,
 } from "./styles"
+import { GetStaticProps } from "next"
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await api.get(`/search/issues`, {
+    params: {
+      q: `repo:raimonesbarros/github-blog`,
+      _sort: "created_at",
+      _order: "desc",
+    },
+  })
+
+  const issues = response.data
+
+  return {
+    props: {
+      total_count: issues.total_count,
+      items: issues.items,
+    },
+    revalidate: 60 * 60 * 0.5, // 30 min
+  }
+}
 
 const Blog = (props: IssueInfoType) => {
   const [issues, setIssues] = useState<IssueInfoType>(props)
@@ -56,10 +76,6 @@ const Blog = (props: IssueInfoType) => {
   function handlePostViewer(postNumber: number | undefined) {
     navigate.push(`/blog/post/${postNumber}`)
   }
-
-  useEffect(() => {
-    fetchIssues()
-  }, [])
 
   return (
     <>
