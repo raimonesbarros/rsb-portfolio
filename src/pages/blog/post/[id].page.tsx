@@ -2,6 +2,7 @@ import { Footer, Header, HandleFallback } from "~/pages/components"
 import { PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
+import { SEODinamic } from "~/utils"
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -11,6 +12,9 @@ import {
 
 const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
+  const issueNumber = post.html_url.slice(53)
+
+  console.log(issueNumber)
 
   if (isFallback) {
     return <HandleFallback />
@@ -18,6 +22,7 @@ const Post = ({ post }: CurrentPostType) => {
 
   return (
     <>
+      <SEODinamic postId={issueNumber} description={post.title} />
       <Header />
       <PostContainer>
         {post.user && <PostHeader post={post} />}
