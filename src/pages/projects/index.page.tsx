@@ -3,7 +3,7 @@ import { projectsData } from "../projectsData"
 import { ProjectsList, Viewer } from "./components"
 import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles"
 import { MainTitle } from "../styles"
-import { SEOProjects } from "~/utils/next-seo/projects"
+import { SEOProjects } from "~/utils"
 import { Footer, HandleFallback, Header } from "../components"
 
 const Projects = () => {

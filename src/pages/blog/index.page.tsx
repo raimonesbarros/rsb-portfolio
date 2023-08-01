@@ -1,6 +1,6 @@
 import { api } from "~/lib"
 import { Posts, EmptyBlog } from "./components"
-import { SEOBlog } from "~/utils/next-seo/blog"
+import { SEOBlog } from "~/utils/next-seo"
 import { Footer, HandleFallback, Header } from "../components"
 import {
   GetStaticProps,
