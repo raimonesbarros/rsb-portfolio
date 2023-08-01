@@ -41,6 +41,7 @@ declare interface PostHeaderProps {
 declare interface CurrentPostType {
   post: {
     html_url: string
+    number: number
     title: string
     created_at: string
     comments: number

@@ -12,7 +12,6 @@ import {
 
 const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
-  const issueNumber = post.html_url.slice(53)
 
   if (isFallback) {
     return <HandleFallback />
@@ -20,7 +19,7 @@ const Post = ({ post }: CurrentPostType) => {
 
   return (
     <>
-      <SEODinamic postId={issueNumber} description={post.title} />
+      <SEODinamic postId={post.number} description={post.title} />
       <Header />
       <PostContainer>
         {post.user && <PostHeader post={post} />}
