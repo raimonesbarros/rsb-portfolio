@@ -16,7 +16,7 @@ const SEODinamic = ({ description, postId }: SEODinamicProps) => (
       description: `${description}`,
       images: [
         {
-          url: "https://raimones.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio.fb8ae99c.png&w=640&q=75",
+          url: "https://raimones.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffavicon.9f3719c1.png&w=128&q=75",
           alt: "Página inicial do portfólio",
           width: 1280,
           height: 720,

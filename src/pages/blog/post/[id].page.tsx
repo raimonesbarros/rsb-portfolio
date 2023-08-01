@@ -14,8 +14,6 @@ const Post = ({ post }: CurrentPostType) => {
   const { isFallback } = useDinamicRouter()
   const issueNumber = post.html_url.slice(53)
 
-  console.log(issueNumber)
-
   if (isFallback) {
     return <HandleFallback />
   }
