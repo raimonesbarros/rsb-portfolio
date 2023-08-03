@@ -12,7 +12,7 @@ import {
 } from "~/modules"
 
 const Post = ({ currentPost }: CurrentPostType) => {
-  const [ post, setPost] = useState<CurrentPostType>(post)
+  const [ post, setPost] = useState<CurrentPostType>(currentPost)
   const { isFallback } = useDinamicRouter()
 
   if (isFallback) {
