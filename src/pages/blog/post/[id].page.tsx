@@ -56,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true}
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   params,
 }) => {
   const postId = params?.id
