@@ -11,8 +11,8 @@ import {
   useState
 } from "~/modules"
 
-const Post = ({ currentPost }: CurrentPostType) => {
-  const [ post, setPost ] = useState<CurrentPostType>(currentPost)
+const Post = ({ post }: CurrentPostType) => {
+  const [ currentPost, setCurrentPosts ] = useState<CurrentPostType>(post)
   const { isFallback } = useDinamicRouter()
 
   if (isFallback) {
@@ -21,12 +21,12 @@ const Post = ({ currentPost }: CurrentPostType) => {
 
   return (
     <>
-      <SEODinamic postId={post.number} description={post.title} />
+      <SEODinamic postId={currentPost.number} description={currentPost.title} />
       <Header />
       <PostContainer>
-        {post.user && <PostHeader post={post} />}
+        {currentPost.user && <PostHeader post={currentPost} />}
         <PostContent>
-          <ReactMarkdown>{post.body}</ReactMarkdown>
+          <ReactMarkdown>{currentPost.body}</ReactMarkdown>
         </PostContent>
       </PostContainer>
       <Footer />
@@ -56,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true}
 }
 
-export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
+export const getStaticProps: GetStaticProps = async ({
   params,
 }) => {
   const postId = params?.id
@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   )
 
   return {
-    props: { currentPost: response.data },
+    props: { post: response.data },
     revalidate: 60 * 60 * 1, // 1 Hour
   }
 }
