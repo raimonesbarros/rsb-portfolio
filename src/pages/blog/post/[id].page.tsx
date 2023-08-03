@@ -8,9 +8,11 @@ import {
   GetStaticProps,
   ReactMarkdown,
   useDinamicRouter,
+  useState
 } from "~/modules"
 
-const Post = ({ post }: CurrentPostType) => {
+const Post = ({ currentPost }: CurrentPostType) => {
+  const [ post, setPost] = useState<CurrentPostType>(post)
   const { isFallback } = useDinamicRouter()
 
   if (isFallback) {
@@ -63,7 +65,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   )
 
   return {
-    props: { post: response.data },
+    props: { currentPost: response.data },
     revalidate: 60 * 60 * 1, // 1 Hour
   }
 }
