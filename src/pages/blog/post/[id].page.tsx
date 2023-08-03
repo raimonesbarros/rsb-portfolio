@@ -7,12 +7,10 @@ import {
   GetStaticPaths,
   GetStaticProps,
   ReactMarkdown,
-  useDinamicRouter,
-  useState
+  useDinamicRouter
 } from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
-  const [ currentPost, setCurrentPosts ] = useState<CurrentPostType>(post)
   const { isFallback } = useDinamicRouter()
 
   if (isFallback) {
@@ -21,12 +19,12 @@ const Post = ({ post }: CurrentPostType) => {
 
   return (
     <>
-      <SEODinamic postId={currentPost.number} description={currentPost.title} />
+      <SEODinamic postId={post.number} description={post.title} />
       <Header />
       <PostContainer>
-        {currentPost.user && <PostHeader post={currentPost} />}
+        {post.user && <PostHeader post={post} />}
         <PostContent>
-          <ReactMarkdown>{currentPost.body}</ReactMarkdown>
+          <ReactMarkdown>{post.body}</ReactMarkdown>
         </PostContent>
       </PostContainer>
       <Footer />
