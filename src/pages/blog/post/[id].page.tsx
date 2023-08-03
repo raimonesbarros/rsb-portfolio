@@ -45,13 +45,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const items = res.data.items
 
-  const paths = items.map((item: any) => ({
-    params: {
-      id: item.number.toString(),
-    },
-  }))
+  //const paths = items.map((item: any) => ({
+  //  params: {
+  //     id: item.number.toString(),
+  //  },
+  //}))
 
-  return { paths, fallback: true }
+  return { paths = [], fallback: true}
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
