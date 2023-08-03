@@ -12,7 +12,7 @@ import {
 } from "~/modules"
 
 const Post = ({ currentPost }: CurrentPostType) => {
-  const [ post, setPost] = useState<CurrentPostType>(currentPost)
+  const [ post, setPost ] = useState<CurrentPostType>(currentPost)
   const { isFallback } = useDinamicRouter()
 
   if (isFallback) {
@@ -47,16 +47,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const items = res.data.items
 
-  //const paths = items.map((item: any) => ({
-  //  params: {
-  //     id: item.number.toString(),
-  //  },
-  //}))
+  const paths = items.map((item: any) => ({
+    params: {
+       id: item.number.toString(),
+    },
+  }))
 
-  return { paths: [], fallback: true}
+  return { paths, fallback: true}
 }
-//<any, { id: string }>
-export const getStaticProps: GetStaticProps = async ({
+
+export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   params,
 }) => {
   const postId = params?.id
