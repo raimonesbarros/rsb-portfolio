@@ -7,7 +7,7 @@ import {
   GetStaticPaths,
   GetStaticProps,
   ReactMarkdown,
-  useDinamicRouter,
+  useDinamicRouter
 } from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
@@ -47,11 +47,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = items.map((item: any) => ({
     params: {
-      id: item.number.toString(),
+       id: item.number.toString(),
     },
   }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: true}
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
