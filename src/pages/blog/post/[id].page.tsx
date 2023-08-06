@@ -7,7 +7,7 @@ import {
   GetStaticPaths,
   GetStaticProps,
   ReactMarkdown,
-  useDinamicRouter
+  useDinamicRouter,
 } from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
@@ -19,9 +19,9 @@ const Post = ({ post }: CurrentPostType) => {
 
   return (
     <>
-      <SEODinamic postId={post.number} description={post.title} />
       <Header />
       <PostContainer>
+        <SEODinamic postId={post.number} description={post.title} />
         {post.user && <PostHeader post={post} />}
         <PostContent>
           <ReactMarkdown>{post.body}</ReactMarkdown>
@@ -47,11 +47,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = items.map((item: any) => ({
     params: {
-       id: item.number.toString(),
+      id: item.number.toString(),
     },
   }))
 
-  return { paths, fallback: true}
+  return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({

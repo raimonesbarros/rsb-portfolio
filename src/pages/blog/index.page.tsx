@@ -59,9 +59,9 @@ const Blog = (props: IssueInfoType) => {
 
   return (
     <>
-      <NextSeo {...SEOBlog} />
       <Header />
       <BlogContainer>
+        <NextSeo {...SEOBlog} />
         <BlogInfo>
           <Text>Publicações</Text>
           <Span>
