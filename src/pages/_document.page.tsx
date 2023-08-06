@@ -7,6 +7,7 @@ import Document, {
   NextScript,
 } from "next/document"
 import { ServerStyleSheet } from "styled-components"
+import { JsonLd } from "~/utils"
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -41,6 +42,7 @@ export default class MyDocument extends Document {
       <>
         <Html lang="pt-BR">
           <Head>
+            <JsonLd />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"

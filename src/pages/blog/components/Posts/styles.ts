@@ -27,7 +27,7 @@ export const BlogPostsContainer = styled.div`
 `
 export const Span = styled.span``
 
-export const Title = styled.h2`
+export const Title = styled.p`
   font-size: 1.25rem;
   font-weight: 700;
   margin-top: -0.8rem;
