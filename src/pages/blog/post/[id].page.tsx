@@ -1,4 +1,4 @@
-import { Footer, Header } from "~/pages/components"
+import { Footer, HandleFallback, Header } from "~/pages/components"
 import { PostContainer, PostContent } from "./styles"
 import { PostHeader } from "./components"
 import { api } from "~/lib"
@@ -11,7 +11,11 @@ import {
 } from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
-  const { query } = useDinamicRouter()
+  const { isFallback ,query } = useDinamicRouter()
+
+  if(isFallback) {
+    return <HandleFallback />
+  }
 
   const blogPost = {
     "@context": "https://schema.org",
@@ -74,7 +78,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }))
 
-  return { paths, fallback: "blocking" }
+  return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
