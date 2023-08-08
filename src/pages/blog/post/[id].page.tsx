@@ -11,37 +11,34 @@ import {
 } from "~/modules"
 
 const Post = ({ post }: CurrentPostType) => {
-  const { isFallback ,query } = useDinamicRouter()
-
-  if(isFallback) {
-    return <HandleFallback />
-  }
+  const { query } = useDinamicRouter()
 
   const blogPost = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://raimones.vercel.app/blog/post/${query.id}`,
     },
-    "headline": `${post.title}`,
-    "description": `${post.body.slice(150, 500)}`,
-    "image": "http://raimones.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblog1.654a2d36.png&w=1920&q=75",
-    "author": {
+    headline: `${post.title}`,
+    description: `${post.body.slice(150, 500)}`,
+    image:
+      "http://raimones.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblog1.654a2d36.png&w=1920&q=75",
+    author: {
       "@type": "Person",
-      "name": "Raimones Barros",
+      name: "Raimones Barros",
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "<RSB/>",
-      "logo": {
+      name: "<RSB/>",
+      logo: {
         "@type": "ImageObject",
-        "url": "http://raimones.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffavicon.9f3719c1.png&w=128&q=75",
+        url: "http://raimones.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffavicon.9f3719c1.png&w=128&q=75",
       },
     },
-    "datePublished": "2023-08-06T12:00:00Z",
-    "dateModified": "2023-08-06T15:30:00Z",
-  };
+    datePublished: "2023-08-06T12:00:00Z",
+    dateModified: "2023-08-06T15:30:00Z",
+  }
 
   return (
     <>
@@ -78,7 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: "blocking" }
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
