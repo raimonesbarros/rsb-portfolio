@@ -1,23 +1,32 @@
 import { styled } from "~/modules"
 
-export const HeaderContainer = styled.header`
+interface NavbarProps {
+  $state: boolean
+}
+
+export const HeaderContainer = styled.header<NavbarProps>`
   position: fixed;
   top: 0;
-  margin: 0 auto;
 
   width: 100%;
-  height: 4.75rem;
+  height: ${(props) => (props.$state ? "100vh" : "4.75rem")};
+
+  margin: 0 auto;
+  padding-top: 1rem;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 
-  background: ${(p) => p.theme.background};
+  background: ${(props) =>
+    props.$state ? props.theme.shade : props.theme.background};
   z-index: 99;
 `
 
 export const HeaderContent = styled.div`
   width: 100%;
   max-width: 1120px;
+  height: 4.75rem;
   position: relative;
 
   padding: 0 2rem;
@@ -25,6 +34,8 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background: ${(props) => props.theme.background};
 
   > img {
     width: 7.8rem;
@@ -36,10 +47,6 @@ export const HeaderContent = styled.div`
     }
   }
 `
-
-interface NavbarProps {
-  $state: boolean
-}
 
 export const Navbar = styled.nav<NavbarProps>`
   @keyframes appearMenu {

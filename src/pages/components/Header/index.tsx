@@ -58,8 +58,8 @@ const Header = () => {
   }
 
   return (
-    <HeaderContainer>
-      <HeaderContent>
+    <HeaderContainer $state={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
+      <HeaderContent onClick={(e) => e.stopPropagation()}>
         <Link
           href="/"
           to={"/"}
