@@ -42,18 +42,19 @@ export default class MyDocument extends Document {
       <>
         <Html lang="pt-BR">
           <Head>
-            <JsonLd />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <JsonLd />
+
             <link
               rel="preconnect"
               href="https://fonts.gstatic.com"
-              crossOrigin="anonymous"
+              crossOrigin={"anonymous"}
             />
-
             <link
-              href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&family=Roboto:wght@100;400;700&display=swap"
               rel="stylesheet"
             />
+
             <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
           </Head>
           <body>

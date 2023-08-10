@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button {
     font-size: 1rem;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.3;
     color: ${(p) => p.theme.text};
     -webkit-font-smoothing: antialiased;
