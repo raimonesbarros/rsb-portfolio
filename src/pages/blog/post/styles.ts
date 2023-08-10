@@ -8,12 +8,16 @@ export const PostContainer = styled.section`
 `
 export const PostContent = styled.article`
   width: 100%;
+
   padding: 2.5rem 2rem;
   font-size: 1.15rem;
 
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  line-height: 150%;
+  color: ${(props) => props.theme.text};
 
   img {
     width: 100%;

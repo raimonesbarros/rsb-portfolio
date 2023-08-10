@@ -12,7 +12,6 @@ export const HeaderContainer = styled.header<NavbarProps>`
   height: ${(props) => (props.$state ? "100vh" : "4.75rem")};
 
   margin: 0 auto;
-  padding-top: 1rem;
 
   display: flex;
   justify-content: flex-start;
@@ -30,6 +29,7 @@ export const HeaderContent = styled.div`
   position: relative;
 
   padding: 0 2rem;
+  margin: 0 auto;
 
   display: flex;
   justify-content: space-between;
@@ -37,8 +37,8 @@ export const HeaderContent = styled.div`
 
   background: ${(props) => props.theme.background};
 
-  > img {
-    width: 7.8rem;
+  > a {
+    margin-top: 1rem;
   }
 
   @media screen and (width > 768px) {
@@ -71,14 +71,14 @@ export const Navbar = styled.nav<NavbarProps>`
 
   a:not(:has(img)) {
     display: flex;
-    align-items: center;
     line-height: 100%;
+    margin-top: 0.2rem;
 
     font-size: 1.2rem;
-    padding: 0.3rem 0.5rem;
+    padding: 0 0.5rem;
     border-bottom-right-radius: 8px;
 
-    border-bottom: 2px solid transparent;
+    border: 2px solid transparent;
     border-right: 2px solid transparent;
 
     &:hover {
@@ -125,6 +125,7 @@ export const Socials = styled.div`
   }
 `
 export const BtnMenu = styled.div`
+  margin-top: 1rem;
   color: ${(p) => p.theme.primary};
 `
 

@@ -64,8 +64,7 @@ const Skills = () => {
       </SkillsContainer>
       <TechsContent>
         <Title>
-          <Strong>Tecnologias</Strong>
-          <Span>que estou utilizando</Span>
+          <Strong>Tecnologias</Strong> <Span>que utilizo</Span>
         </Title>
         <Techs>
           <Icon
@@ -77,8 +76,8 @@ const Skills = () => {
           />
           <Icon
             src="https://icongr.am/devicon/css3-plain.svg?size=55&color=45c7af"
-            width={70}
-            height={70}
+            width={55}
+            height={55}
             alt="ícone da Linguagem de estilos CSS3"
             title="CSS3"
           />
@@ -91,8 +90,8 @@ const Skills = () => {
           />
           <Icon
             src="https://icongr.am/material/react.svg?size=70&color=45c7af"
-            width={70}
-            height={70}
+            width={65}
+            height={65}
             alt="ícone do framework reactJS"
             title="ReactJS"
           />
@@ -105,8 +104,8 @@ const Skills = () => {
           />
           <Icon
             src="https://icongr.am/feather/figma.svg?size=55&color=45c7af"
-            width={70}
-            height={70}
+            width={55}
+            height={55}
             alt="ícone da Ferramenta de desing Figma"
             title="Figma"
           />
