@@ -37,8 +37,10 @@ export const HeaderContent = styled.div`
 
   background: ${(props) => props.theme.background};
 
-  > a {
-    margin-top: 1rem;
+  @media screen and (width <= 768px) {
+    > a {
+      margin-top: 1rem;
+    }
   }
 
   @media screen and (width > 768px) {
@@ -65,13 +67,14 @@ export const Navbar = styled.nav<NavbarProps>`
 
   text-transform: uppercase;
   font-weight: 700;
+  font-family: "Roboto";
   line-height: 100%;
 
   background: ${(p) => p.theme.background};
 
   a:not(:has(img)) {
     display: flex;
-    line-height: 100%;
+    line-height: 140%;
     margin-top: 0.2rem;
 
     font-size: 1.2rem;

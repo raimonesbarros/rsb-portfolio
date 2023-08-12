@@ -11,6 +11,7 @@ export const Title = styled.h2`
   margin-top: 1rem;
 
   font-size: 1.8rem;
+  font-family: "Roboto";
   font-weight: 100;
   color: ${(p) => p.theme.text};
 `

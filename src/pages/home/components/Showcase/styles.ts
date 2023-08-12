@@ -52,8 +52,10 @@ export const ShowcaseContainer = styled.div`
 export const BgImage = styled(NextImage)``
 
 export const Text = styled.p`
+  height: 2.2rem;
   font-size: 1.5rem;
   font-weight: 100;
+  font-family: "Roboto";
   color: ${(p) => p.theme.gray600};
   white-space: nowrap;
   overflow: hidden;
@@ -93,6 +95,9 @@ export const ShowcaseDescription = styled.div`
   padding-left: 20%;
   transform: translatey(-2.35rem);
 
+  p:nth-child(even) {
+    margin-bottom: 0.5rem;
+  }
   p:nth-child(2) {
     width: 9.5rem;
     animation: appear 1.1s normal, cursors 0.5s infinite normal,
@@ -106,7 +111,7 @@ export const ShowcaseDescription = styled.div`
   p:nth-child(6) {
     width: 9.6rem;
     border-right: 2px solid ${(p) => p.theme.text};
-    animation: appear 3.3s normal, cursors 0.5s infinite normal,
+    animation: appear 3.3s normal, cursors 0.7s infinite normal,
       writing 1s 3.2s steps(9) normal;
   }
 
