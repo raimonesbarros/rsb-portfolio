@@ -1,26 +1,26 @@
-import { FilePdf, me } from "~/assets"
-import { Span, Strong, Title } from "../../styles"
+import { FilePdf, me } from "~/assets";
+import { Span, Strong, Title } from "../../styles";
 import {
-  AboutSection,
-  AboutContent,
-  Button,
   AboutContainer,
+  AboutContent,
+  AboutSection,
   BgImage,
+  Button,
   Text,
-} from "./styles"
+} from "./styles";
 
 const About = () => {
   const handleDownload = () => {
     fetch("Raimones-dev-Curriculo.pdf").then((response) => {
       response.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob)
-        let alink = document.createElement("a")
-        alink.href = fileURL
-        alink.download = "Raimones-dev-Curriculo.pdf"
-        alink.click()
-      })
-    })
-  }
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "Raimones-dev-Curriculo.pdf";
+        alink.click();
+      });
+    });
+  };
 
   return (
     <AboutSection id="about">
@@ -28,7 +28,7 @@ const About = () => {
         <Title>
           <Span>um pouco</Span> <Strong>Sobre mim</Strong>
         </Title>
-        <BgImage src={me} alt="imagem de fundo: Foto de Raimones" width={400} />
+        <BgImage src={me} alt="imagem de fundo: Foto de Raimones" />
         <AboutContent>
           <Text>
             Eu sou o <Strong>Raimones</Strong>, tenho{" "}
@@ -53,7 +53,7 @@ const About = () => {
         </AboutContent>
       </AboutContainer>
     </AboutSection>
-  )
-}
+  );
+};
 
-export default About
+export default About;

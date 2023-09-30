@@ -1,10 +1,10 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const SkillsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 export const SkillsContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -16,7 +16,7 @@ export const SkillsContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 3rem;
-`
+`;
 export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -30,9 +30,9 @@ export const Cards = styled.div`
   @media screen and (width < 520px) {
     grid-template-columns: repeat(1, 1fr);
   }
-`
+`;
 export const Card = styled.div`
-  min-width: 248px;
+  min-width: 232px;
   min-height: 120px;
   padding: 1rem;
 
@@ -44,7 +44,7 @@ export const Card = styled.div`
 
   border: 1px solid ${(props) => props.theme.gray300};
   border-radius: 6px;
-`
+`;
 export const Heading = styled.h3`
   display: flex;
   align-items: center;
@@ -53,14 +53,14 @@ export const Heading = styled.h3`
   svg {
     color: ${(p) => p.theme.primary};
   }
-`
+`;
 export const Text = styled.p`
   text-align: center;
   font-weight: 100;
   padding: 0 0.5rem;
   letter-spacing: 0.06rem;
   color: ${(p) => p.theme.text};
-`
+`;
 export const TechsContent = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -72,7 +72,7 @@ export const TechsContent = styled.div`
   align-items: center;
 
   border-bottom: 1px solid ${(p) => p.theme.gray600};
-`
+`;
 export const Techs = styled.div`
   display: flex;
   justify-content: center;
@@ -94,5 +94,6 @@ export const Techs = styled.div`
   @media screen and (width < 425px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`
-export const Icon = styled.img``
+`;
+
+export const Icon = styled.img``;

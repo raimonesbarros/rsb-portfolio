@@ -1,21 +1,21 @@
-import { NextSeo, useDinamicRouter, useState } from "~/modules"
-import { projectsData } from "../projectsData"
-import { ProjectsList, Viewer } from "./components"
-import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles"
-import { MainTitle } from "../styles"
-import { SEOProjects } from "~/utils"
-import { Footer, HandleFallback, Header } from "../components"
+import { NextSeo, useDynamicRouter, useState } from "~/modules";
+import { SEOProjects } from "~/utils";
+import { Footer, HandleFallback, Header } from "../components";
+import { projectsData } from "../projectsData";
+import { MainTitle } from "../styles";
+import { ProjectsList, Viewer } from "./components";
+import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles";
 
 const Projects = () => {
-  const [current, setCurrent] = useState(0)
-  const { isFallback } = useDinamicRouter()
+  const [current, setCurrent] = useState(0);
+  const { isFallback } = useDynamicRouter();
 
   if (isFallback) {
-    return <HandleFallback />
+    return <HandleFallback />;
   }
 
   function handleProjectToSee(index: number) {
-    setCurrent(index)
+    setCurrent(index);
   }
 
   return (
@@ -42,7 +42,7 @@ const Projects = () => {
       </ProjectsSection>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

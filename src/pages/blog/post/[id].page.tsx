@@ -1,17 +1,17 @@
-import { Footer, HandleFallback, Header } from "~/pages/components"
-import { PostContainer, PostContent } from "./styles"
-import { PostHeader } from "./components"
-import { api } from "~/lib"
-import { JsonLdDinamic, SEODinamic } from "~/utils"
+import { api } from "~/lib";
 import {
   GetStaticPaths,
   GetStaticProps,
   ReactMarkdown,
-  useDinamicRouter,
-} from "~/modules"
+  useDynamicRouter,
+} from "~/modules";
+import { Footer, Header } from "~/pages/components";
+import { JsonLdDinamic, SEODinamic } from "~/utils";
+import { PostHeader } from "./components";
+import { PostContainer, PostContent } from "./styles";
 
 const Post = ({ post }: CurrentPostType) => {
-  const { query } = useDinamicRouter()
+  const { query } = useDynamicRouter();
 
   const blogPost = {
     "@context": "https://schema.org",
@@ -38,7 +38,7 @@ const Post = ({ post }: CurrentPostType) => {
     },
     datePublished: "2023-08-06T12:00:00Z",
     dateModified: "2023-08-06T15:30:00Z",
-  }
+  };
 
   return (
     <>
@@ -53,10 +53,10 @@ const Post = ({ post }: CurrentPostType) => {
       </PostContainer>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await api.get(`/search/issues`, {
@@ -65,29 +65,29 @@ export const getStaticPaths: GetStaticPaths = async () => {
       _sort: "created_at",
       _order: "desc",
     },
-  })
+  });
 
-  const items = res.data.items
+  const items = res.data.items;
 
   const paths = items.map((item: any) => ({
     params: {
       id: item.number.toString(),
     },
-  }))
+  }));
 
-  return { paths, fallback: "blocking" }
-}
+  return { paths, fallback: "blocking" };
+};
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   params,
 }) => {
-  const postId = params?.id
+  const postId = params?.id;
   const response = await api.get(
     `/repos/raimonesbarros/github-blog/issues/${postId}`
-  )
+  );
 
   return {
     props: { post: response.data },
     revalidate: 60 * 60 * 1, // 1 Hour
-  }
-}
+  };
+};
