@@ -1,4 +1,4 @@
-import { NextImage, styled } from "~/modules"
+import { NextImage, styled } from "~/modules";
 
 export const AboutSection = styled.section`
   width: 100%;
@@ -6,7 +6,7 @@ export const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 export const AboutContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -33,8 +33,10 @@ export const AboutContainer = styled.div`
       opacity: 0.7;
     }
   }
-`
-export const BgImage = styled(NextImage)``
+`;
+export const BgImage = styled(NextImage).attrs({
+  width: 400,
+})``;
 
 export const AboutContent = styled.div`
   width: 100%;
@@ -43,7 +45,7 @@ export const AboutContent = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 1rem;
-`
+`;
 export const Text = styled.p`
   max-width: 500px;
   padding-top: 2rem;
@@ -55,7 +57,7 @@ export const Text = styled.p`
 
   color: ${(p) => p.theme.text};
   z-index: 1;
-`
+`;
 export const Button = styled.button`
   padding: 0.5rem 3.5rem;
   font-weight: 700;
@@ -75,4 +77,4 @@ export const Button = styled.button`
     opacity: 0.8;
     transition: all 0.2s;
   }
-`
+`;
