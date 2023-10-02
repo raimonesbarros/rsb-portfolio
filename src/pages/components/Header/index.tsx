@@ -1,5 +1,5 @@
-import { Link, animateScroll, useRouter, useState } from "~/modules"
-import { LogoSvg, X, List } from "~/assets"
+import { Link, animateScroll, useRouter, useState } from "~/modules";
+import { List, LogoSvg, X } from "~/utils/assets";
 import {
   BtnMenu,
   HeaderContainer,
@@ -7,7 +7,7 @@ import {
   Icon,
   Navbar,
   Socials,
-} from "./styles"
+} from "./styles";
 
 const links = [
   {
@@ -40,21 +40,21 @@ const links = [
     content: "CONTATO",
     label: "ir para sessão contatos",
   },
-]
+];
 
 const Header = () => {
-  const navigate = useRouter()
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const navigate = useRouter();
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   function navigateToPage(local: string) {
-    setMenuIsOpen(false)
-    navigate.push(local)
-    animateScroll.scrollToTop()
+    setMenuIsOpen(false);
+    navigate.push(local);
+    animateScroll.scrollToTop();
   }
 
   function navigateTo(local: string) {
-    setMenuIsOpen(false)
-    navigate.push(local)
+    setMenuIsOpen(false);
+    navigate.push(local);
   }
 
   return (
@@ -86,7 +86,7 @@ const Header = () => {
               >
                 {content}
               </Link>
-            )
+            );
           })}
           <Socials onClick={() => setMenuIsOpen(false)}>
             <a
@@ -126,7 +126,7 @@ const Header = () => {
         </BtnMenu>
       </HeaderContent>
     </HeaderContainer>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

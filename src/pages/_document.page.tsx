@@ -6,7 +6,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import { ServerStyleSheet } from "~/modules";
 import { JsonLd } from "~/utils";
 
 export default class MyDocument extends Document {

@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const MainTitle = styled.h1`
   position: absolute;
@@ -6,4 +6,4 @@ export const MainTitle = styled.h1`
   width: 0;
   overflow: hidden;
   opacity: 0;
-`
+`;

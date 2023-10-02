@@ -1,4 +1,4 @@
-import { api } from "~/lib";
+import { api } from "~/infra/api";
 import {
   GetStaticPaths,
   GetStaticProps,

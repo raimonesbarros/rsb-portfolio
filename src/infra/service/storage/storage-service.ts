@@ -4,8 +4,6 @@ if (typeof window !== "undefined") {
   Storage = window.localStorage;
 }
 
-const storage = window.localStorage;
-
 const clearWholeStorage = (): void => {
   Storage.clear();
 };
@@ -15,7 +13,6 @@ const clearStorageItem = (key: string): void => {
 };
 
 export const StorageService = {
-  storage,
   clearStorageItem,
   clearWholeStorage,
 };

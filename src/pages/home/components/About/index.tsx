@@ -1,4 +1,4 @@
-import { FilePdf, me } from "~/assets";
+import { FilePdf, me } from "~/utils";
 import { Span, Strong, Title } from "../../styles";
 import {
   AboutContainer,

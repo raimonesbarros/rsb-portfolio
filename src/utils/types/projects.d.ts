@@ -3,7 +3,7 @@ declare interface ProjectProps {
   title: string;
   smallDescription: string;
   position: number;
-  onProjectToSee: (index: number) => void;
+  changeCurrentProject: (index: number) => void;
 }
 
 declare interface ProjectListProps {

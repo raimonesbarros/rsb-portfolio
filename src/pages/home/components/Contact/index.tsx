@@ -1,10 +1,10 @@
-import { Span, Strong, Title } from "../../styles"
 import {
-  WhatsappLogo,
   EnvelopeSimple,
-  LinkedinLogo,
   InstagramLogo,
-} from "~/assets"
+  LinkedinLogo,
+  WhatsappLogo,
+} from "~/utils/assets";
+import { Span, Strong, Title } from "../../styles";
 import {
   ContactCard,
   ContactContainer,
@@ -12,7 +12,7 @@ import {
   ContactsList,
   Link,
   Text,
-} from "./styles"
+} from "./styles";
 
 const Contact = () => {
   return (
@@ -49,7 +49,7 @@ const Contact = () => {
         </ContactsList>
       </ContactContainer>
     </ContactSection>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

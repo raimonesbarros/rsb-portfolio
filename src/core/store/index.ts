@@ -1,12 +1,12 @@
 import { configurePersistable } from "~/modules";
 import { isClient } from "~/utils";
-import ProjectsStore from "./projects.store";
+import FirestoreProvider from "./firestoreProvider.store";
 
 class RootStore {
-  projects: ProjectsStore;
+  firestoreProvider: FirestoreProvider;
 
   constructor() {
-    this.projects = new ProjectsStore(this);
+    this.firestoreProvider = new FirestoreProvider(this);
   }
 }
 
@@ -17,6 +17,6 @@ configurePersistable({
 
 const store = new RootStore();
 
-export { ProjectsStore, RootStore };
+export { FirestoreProvider, RootStore };
 
 export default store;

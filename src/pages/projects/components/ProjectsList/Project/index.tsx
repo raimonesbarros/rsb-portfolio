@@ -1,18 +1,19 @@
-import { Image, ProjectContainer, ProjectInfo, Subtitle, Text } from "./styles"
+import { Image, ProjectContainer, ProjectInfo, Subtitle, Text } from "./styles";
 
 const Project = ({
   image,
   title,
   smallDescription,
   position,
-  onProjectToSee,
+  changeCurrentProject,
 }: ProjectProps) => {
   return (
-    <ProjectContainer onClick={() => onProjectToSee(position)}>
+    <ProjectContainer onClick={() => changeCurrentProject(position)}>
       <Image
         src={image}
         alt={`página inicial do projeto ${title}`}
-        width={300}
+        width={160}
+        height={90}
         priority
       />
       <ProjectInfo>
@@ -20,7 +21,7 @@ const Project = ({
         <Text>{smallDescription}</Text>
       </ProjectInfo>
     </ProjectContainer>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

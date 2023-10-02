@@ -1,22 +1,40 @@
-import { NextSeo, useDynamicRouter, useState } from "~/modules";
-import { SEOProjects } from "~/utils";
+import { store } from "~/core";
+import {
+  GetStaticProps,
+  NextSeo,
+  observer,
+  useDynamicRouter,
+  useEffect,
+} from "~/modules";
+import { SEOProjects, useStores } from "~/utils";
 import { Footer, HandleFallback, Header } from "../components";
-import { projectsData } from "../projectsData";
 import { MainTitle } from "../styles";
 import { ProjectsList, Viewer } from "./components";
 import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles";
-
-const Projects = () => {
-  const [current, setCurrent] = useState(0);
+type Props = {
+  projectsData: Projects;
+};
+const Projects = ({ projectsData }: Props) => {
+  const {
+    firestoreProvider: {
+      fetchClientProvider,
+      currentProjectId,
+      changeCurrentProject,
+    },
+  } = useStores();
   const { isFallback } = useDynamicRouter();
 
   if (isFallback) {
     return <HandleFallback />;
   }
 
-  function handleProjectToSee(index: number) {
-    setCurrent(index);
-  }
+  const handleFetchClientProvider = async () => {
+    await fetchClientProvider();
+  };
+
+  useEffect(() => {
+    handleFetchClientProvider();
+  }, []);
 
   return (
     <>
@@ -29,14 +47,17 @@ const Projects = () => {
         <ProjectsContainer>
           <ProjectsContent>
             <Viewer
-              image={projectsData[current].image}
-              title={projectsData[current].title}
-              tags={projectsData[current].tags}
-              fullDescription={projectsData[current].fullDescription}
-              deploy={projectsData[current].deploy}
-              repository={projectsData[current].repository}
+              image={projectsData[currentProjectId].image}
+              title={projectsData[currentProjectId].title}
+              tags={projectsData[currentProjectId].tags}
+              fullDescription={projectsData[currentProjectId].fullDescription}
+              deploy={projectsData[currentProjectId].deploy}
+              repository={projectsData[currentProjectId].repository}
             />
-            <ProjectsList projectToSee={handleProjectToSee} />
+            <ProjectsList
+              projectsData={projectsData}
+              changeCurrentProject={changeCurrentProject}
+            />
           </ProjectsContent>
         </ProjectsContainer>
       </ProjectsSection>
@@ -45,4 +66,17 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default observer(Projects);
+
+export const getStaticProps: GetStaticProps = async () => {
+  const {
+    firestoreProvider: { fetchClientProvider },
+  } = store;
+
+  const projectsData = await fetchClientProvider();
+
+  return {
+    props: { projectsData },
+    revalidate: 60 * 60 * 1, // 1 Hour
+  };
+};
