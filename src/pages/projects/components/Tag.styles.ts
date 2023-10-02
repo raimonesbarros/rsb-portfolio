@@ -1,7 +1,7 @@
-import { styled } from "styled-components"
+import { styled } from "~/modules";
 
 interface TagContentProps {
-  $variant: string
+  $variant: string;
 }
 
 export const TagContent = styled.span<TagContentProps>`
@@ -21,4 +21,4 @@ export const TagContent = styled.span<TagContentProps>`
   background-color: ${(props) => props.$variant === "+ libs" && "#000000"};
   border: 1px solid
     ${(props) => (props.$variant === "+libs" ? "#ffffff" : "transparent")};
-`
+`;

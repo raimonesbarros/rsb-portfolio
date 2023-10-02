@@ -1,16 +1,16 @@
-import { Code, Devices, HandTap, Layout } from "~/assets"
-import { Title, Span, Strong } from "../../styles"
+import { Code, Devices, HandTap, Layout } from "~/utils/assets";
+import { Span, Strong, Title } from "../../styles";
 import {
   Card,
   Cards,
-  SkillsSection,
+  Heading,
+  Icon,
   SkillsContainer,
+  SkillsSection,
   Techs,
   TechsContent,
   Text,
-  Heading,
-  Icon,
-} from "./styles"
+} from "./styles";
 
 const Skills = () => {
   return (
@@ -126,7 +126,7 @@ const Skills = () => {
         </Techs>
       </TechsContent>
     </SkillsSection>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

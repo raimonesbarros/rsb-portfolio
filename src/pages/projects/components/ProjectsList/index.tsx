@@ -1,8 +1,12 @@
-import { projectsData } from "~/pages/projectsData"
-import { ProjectsListContainer } from "./styles"
-import Project from "./Project"
+import Project from "./Project";
+import { ProjectsListContainer } from "./styles";
 
-const ProjectsList = ({ projectToSee }: ProjectListProps) => {
+type Props = {
+  projectsData: Projects;
+  changeCurrentProject: (index: number) => void;
+};
+
+const ProjectsList = ({ projectsData, changeCurrentProject }: Props) => {
   return (
     <ProjectsListContainer>
       {projectsData.map((project, i) => {
@@ -13,12 +17,12 @@ const ProjectsList = ({ projectToSee }: ProjectListProps) => {
             title={project.title}
             smallDescription={project.smallDescription}
             position={i}
-            onProjectToSee={projectToSee}
+            changeCurrentProject={changeCurrentProject}
           />
-        )
+        );
       })}
     </ProjectsListContainer>
-  )
-}
+  );
+};
 
-export default ProjectsList
+export default ProjectsList;

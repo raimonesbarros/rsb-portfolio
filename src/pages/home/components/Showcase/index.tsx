@@ -1,13 +1,13 @@
-import { MainTitle } from "~/pages/styles"
-import { CaretDown, dummy } from "~/assets"
+import { MainTitle } from "~/pages/styles";
+import { CaretDown, dummy } from "~/utils/assets";
 import {
-  ShowcaseSection,
+  BgImage,
   ShowcaseContainer,
   ShowcaseDescription,
+  ShowcaseSection,
   Strong,
   Text,
-  BgImage,
-} from "./styles"
+} from "./styles";
 
 const Showcase = () => {
   return (
@@ -37,7 +37,7 @@ const Showcase = () => {
         <CaretDown size={40} />
       </ShowcaseContainer>
     </ShowcaseSection>
-  )
-}
+  );
+};
 
-export default Showcase
+export default Showcase;

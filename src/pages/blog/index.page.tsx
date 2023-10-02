@@ -1,14 +1,14 @@
-import { api } from "~/lib"
-import { Posts, EmptyBlog } from "./components"
-import { SEOBlog } from "~/utils/next-seo"
-import { Footer, Header } from "../components"
+import { api } from "~/infra/api";
 import {
   GetStaticProps,
   NextSeo,
   useForm,
   useRouter,
   useState,
-} from "~/modules"
+} from "~/modules";
+import { SEOBlog } from "~/utils/next-seo";
+import { Footer, Header } from "../components";
+import { EmptyBlog, Posts } from "./components";
 import {
   BlogContainer,
   BlogInfo,
@@ -18,17 +18,17 @@ import {
   PostContainer,
   Span,
   Text,
-} from "./styles"
+} from "./styles";
 
 const Blog = (props: IssueInfoType) => {
-  const [issues, setIssues] = useState<IssueInfoType>(props)
-  const navigate = useRouter()
+  const [issues, setIssues] = useState<IssueInfoType>(props);
+  const navigate = useRouter();
   const {
     register,
     handleSubmit,
     reset,
     formState: { isSubmitting },
-  } = useForm()
+  } = useForm();
 
   async function fetchIssues(query = "") {
     const response = await api.get(`/search/issues`, {
@@ -37,18 +37,18 @@ const Blog = (props: IssueInfoType) => {
         _sort: "created_at",
         _order: "desc",
       },
-    })
+    });
 
-    setIssues(response.data)
+    setIssues(response.data);
   }
 
   function handleNewSearch(data: { search?: string }) {
-    fetchIssues(data.search)
-    reset()
+    fetchIssues(data.search);
+    reset();
   }
 
   function handlePostViewer(postNumber: number | undefined) {
-    navigate.push(`/blog/post/${postNumber}`)
+    navigate.push(`/blog/post/${postNumber}`);
   }
 
   return (
@@ -94,10 +94,10 @@ const Blog = (props: IssueInfoType) => {
       </BlogContainer>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await api.get(`/search/issues`, {
@@ -106,9 +106,9 @@ export const getStaticProps: GetStaticProps = async () => {
       _sort: "created_at",
       _order: "desc",
     },
-  })
+  });
 
-  const issues = response.data
+  const issues = response.data;
 
   return {
     props: {
@@ -116,5 +116,5 @@ export const getStaticProps: GetStaticProps = async () => {
       items: issues.items,
     },
     revalidate: 60 * 60 * 1, // 1 Hour
-  }
-}
+  };
+};

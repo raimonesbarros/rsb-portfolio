@@ -1,5 +1,5 @@
-import { animateScroll } from "~/modules"
-import { ArrowCircleUp, LogoSvg } from "~/assets"
+import { animateScroll } from "~/modules";
+import { ArrowCircleUp, LogoSvg } from "~/utils/assets";
 import {
   FooterContainer,
   FooterContent,
@@ -7,7 +7,7 @@ import {
   Span,
   Strong,
   Text,
-} from "./styles"
+} from "./styles";
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
         </Icon>
       </FooterContent>
     </FooterContainer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

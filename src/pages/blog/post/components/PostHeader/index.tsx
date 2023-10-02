@@ -1,6 +1,12 @@
-import { formatDistanceToNow, ptBR } from "~/modules"
-import { BackSvg, CommentSvg, DateSvg, GithubSvg, LinkSvg } from "~/assets"
-import SEODinamic from "~/utils/next-seo/Dinamic"
+import { formatDistanceToNow, ptBR } from "~/modules";
+import {
+  BackSvg,
+  CommentSvg,
+  DateSvg,
+  GithubSvg,
+  LinkSvg,
+} from "~/utils/assets";
+import SEODinamic from "~/utils/next-seo/Dinamic";
 import {
   Link,
   PostHeaderContainer,
@@ -9,7 +15,7 @@ import {
   Span,
   Text,
   Title,
-} from "./styles"
+} from "./styles";
 
 const PostHeader = ({ post }: PostHeaderProps) => {
   return (
@@ -46,7 +52,7 @@ const PostHeader = ({ post }: PostHeaderProps) => {
         </Text>
       </PostHeaderInfo>
     </PostHeaderContainer>
-  )
-}
+  );
+};
 
-export default PostHeader
+export default PostHeader;

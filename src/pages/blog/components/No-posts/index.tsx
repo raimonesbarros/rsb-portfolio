@@ -1,5 +1,5 @@
-import { FileX } from "~/assets"
-import { EmptyBlogContainer, Small, Strong, Text } from "./styles"
+import { FileX } from "~/utils/assets";
+import { EmptyBlogContainer, Small, Strong, Text } from "./styles";
 
 const EmptyBlog = () => {
   return (
@@ -12,7 +12,7 @@ const EmptyBlog = () => {
         </Small>
       </Text>
     </EmptyBlogContainer>
-  )
-}
+  );
+};
 
-export default EmptyBlog
+export default EmptyBlog;

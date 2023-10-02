@@ -1,6 +1,16 @@
 export { formatDistanceToNow } from "date-fns";
 export { ptBR } from "date-fns/locale";
 export {
+  initializeApp as InitFirebaseApp,
+  type FirebaseApp,
+} from "firebase/app";
+export {
+  getFirestore as InitFirestore,
+  doc,
+  getDoc,
+  type Firestore,
+} from "firebase/firestore";
+export {
   action,
   makeAutoObservable,
   makeObservable,
@@ -30,4 +40,4 @@ export { useEffect, useState } from "react";
 export { useForm } from "react-hook-form";
 export { ReactMarkdown } from "react-markdown/lib/react-markdown";
 export { Link, animateScroll } from "react-scroll";
-export { ThemeProvider, styled } from "styled-components";
+export { ServerStyleSheet, ThemeProvider, styled } from "styled-components";

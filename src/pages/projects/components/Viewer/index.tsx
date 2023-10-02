@@ -1,3 +1,4 @@
+import { Tag } from "..";
 import {
   Buttons,
   FullImage,
@@ -7,8 +8,7 @@ import {
   Text,
   ViewerContainer,
   ViewerContent,
-} from "./styles"
-import { Tag } from ".."
+} from "./styles";
 
 const Viewer = ({
   image,
@@ -24,13 +24,14 @@ const Viewer = ({
         <FullImage
           src={image}
           width={600}
+          height={400}
           alt={`Imagem do projeto ${title}`}
           priority
         />
         <Subtitle>{title}</Subtitle>
         <Tags>
           {tags.map((tag, i) => {
-            return <Tag key={i} content={tag} />
+            return <Tag key={i} content={tag} />;
           })}
         </Tags>
         <Text>{fullDescription}</Text>
@@ -44,7 +45,7 @@ const Viewer = ({
         </Buttons>
       </ViewerContent>
     </ViewerContainer>
-  )
-}
+  );
+};
 
-export default Viewer
+export default Viewer;
