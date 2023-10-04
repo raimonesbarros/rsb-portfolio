@@ -1,4 +1,4 @@
-import { Link, animateScroll, useRouter, useState } from "~/modules";
+import { Link, useRouter, useState } from "~/modules";
 import { List, LogoSvg, X } from "~/utils/assets";
 import {
   BtnMenu,
@@ -46,12 +46,6 @@ const Header = () => {
   const navigate = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  function navigateToPage(local: string) {
-    setMenuIsOpen(false);
-    navigate.push(local);
-    animateScroll.scrollToTop();
-  }
-
   function navigateTo(local: string) {
     setMenuIsOpen(false);
     navigate.push(local);
@@ -60,17 +54,7 @@ const Header = () => {
   return (
     <HeaderContainer $state={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
       <HeaderContent onClick={(e) => e.stopPropagation()}>
-        <Link
-          href="/"
-          to={"/"}
-          smooth={true}
-          offset={-76}
-          duration={500}
-          onClick={() => navigateToPage("/")}
-          aria-label="Ir para o início"
-        >
-          <LogoSvg alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que" />
-        </Link>
+        <LogoSvg alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que" />
         <Navbar $state={menuIsOpen}>
           {links.map(({ href, to, content, label }) => {
             return (
