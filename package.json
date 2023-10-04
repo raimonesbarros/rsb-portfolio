@@ -1,40 +1,42 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "rsb-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "license": "ISC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.0.10",
+    "@phosphor-icons/react": "2.0.10",
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
-    "@types/styled-components": "^5.1.26",
-    "axios": "^1.4.0",
-    "date-fns": "^2.30.0",
+    "@types/styled-components": "5.1.26",
+    "axios": "1.5.1",
+    "date-fns": "2.30.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
-    "firebase": "^10.4.0",
-    "mobx": "^6.10.2",
-    "mobx-persist-store": "^1.1.3",
-    "mobx-react": "^9.0.1",
+    "firebase": "10.4.0",
+    "mobx": "6.10.2",
+    "mobx-persist-store": "1.1.3",
+    "mobx-react": "9.0.1",
     "next": "13.4.12",
-    "next-pwa": "^5.6.0",
-    "next-seo": "^6.1.0",
+    "next-pwa": "5.6.0",
+    "next-seo": "6.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.45.0",
-    "react-markdown": "^8.0.7",
-    "react-scroll": "^1.8.9",
-    "sharp": "^0.32.4",
-    "styled-components": "^6.0.5",
+    "react-hook-form": "7.45.0",
+    "react-markdown": "8.0.7",
+    "react-scroll": "1.8.9",
+    "sharp": "0.32.4",
+    "styled-components": "6.0.5",
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/react-scroll": "^1.8.7"
+    "@types/react-scroll": "1.8.7"
   }
 }
