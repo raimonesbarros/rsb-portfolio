@@ -7,7 +7,7 @@ import {
   useEffect,
 } from "~/modules";
 import { SEOProjects, useStores } from "~/utils";
-import { Footer, HandleFallback, Header } from "../components";
+import { Footer, Header } from "../components";
 import { MainTitle } from "../styles";
 import { ProjectsList, Viewer } from "./components";
 import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles";
@@ -24,17 +24,13 @@ const Projects = ({ projectsData }: Props) => {
   } = useStores();
   const { isFallback } = useDynamicRouter();
 
-  if (isFallback) {
-    return <HandleFallback />;
-  }
-
   const handleFetchClientProvider = async () => {
     await fetchClientProvider();
   };
 
   useEffect(() => {
-    handleFetchClientProvider();
-  }, []);
+    fetchClientProvider();
+  }, [fetchClientProvider]);
 
   return (
     <>
