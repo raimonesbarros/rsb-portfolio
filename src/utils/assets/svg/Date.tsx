@@ -14,7 +14,7 @@ const Date = ({ className, handleClick }: SvgProps) => {
         fill="#3A536B"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Date
+export default Date;

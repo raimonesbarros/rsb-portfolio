@@ -1,7 +1,8 @@
-import React from "react"
+/* eslint-disable react/no-danger */
+import React from "react";
 
 interface JsonLdProps {
-  data: Record<string, any>
+  data: Record<string, any>;
 }
 
 const JsonLdDinamic: React.FC<JsonLdProps> = ({ data }) => {
@@ -12,7 +13,7 @@ const JsonLdDinamic: React.FC<JsonLdProps> = ({ data }) => {
         __html: JSON.stringify(data),
       }}
     />
-  )
-}
+  );
+};
 
-export default JsonLdDinamic
+export default JsonLdDinamic;

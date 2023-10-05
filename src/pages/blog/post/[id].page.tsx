@@ -67,7 +67,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   });
 
-  const items = res.data.items;
+  const { items } = res.data;
 
   const paths = items.map((item: any) => ({
     params: {
@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
 }) => {
   const postId = params?.id;
   const response = await api.get(
-    `/repos/raimonesbarros/github-blog/issues/${postId}`
+    `/repos/raimonesbarros/github-blog/issues/${postId}`,
   );
 
   return {

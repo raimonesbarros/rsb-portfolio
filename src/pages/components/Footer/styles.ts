@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -8,7 +8,7 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   line-height: 1;
-`
+`;
 
 export const FooterContent = styled.div`
   width: 100%;
@@ -22,11 +22,11 @@ export const FooterContent = styled.div`
   align-items: center;
 
   background: ${(p) => p.theme.background};
-`
+`;
 
-export const Strong = styled.strong``
+export const Strong = styled.strong``;
 
-export const Span = styled.span``
+export const Span = styled.span``;
 
 export const Text = styled.p`
   margin: 0 auto;
@@ -52,9 +52,9 @@ export const Text = styled.p`
     display: flex;
     align-items: center;
   }
-`
+`;
 export const Icon = styled.span`
   svg {
     color: ${(p) => p.theme.primary};
   }
-`
+`;

@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const FallbackContainer = styled.div`
   @keyframes fallbackAnimation {
@@ -18,4 +18,4 @@ export const FallbackContainer = styled.div`
     height: "auto";
     animation: fallbackAnimation 1s ease-in-out infinite;
   }
-`
+`;

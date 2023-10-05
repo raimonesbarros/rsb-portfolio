@@ -14,7 +14,7 @@ const About = () => {
     fetch("Raimones-dev-Curriculo.pdf").then((response) => {
       response.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob);
-        let alink = document.createElement("a");
+        const alink = document.createElement("a");
         alink.href = fileURL;
         alink.download = "Raimones-dev-Curriculo.pdf";
         alink.click();

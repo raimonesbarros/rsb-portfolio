@@ -21,7 +21,7 @@ const Github = ({ className, handleClick }: SvgProps) => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default Github
+export default Github;

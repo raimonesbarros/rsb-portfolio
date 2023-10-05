@@ -26,7 +26,7 @@ const Link = ({ className, handleClick }: SvgProps) => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default Link
+export default Link;

@@ -1,4 +1,4 @@
-import { NextImage, styled } from "~/modules"
+import { NextImage, styled } from "~/modules";
 
 export const ShowcaseSection = styled.section`
   width: 100%;
@@ -9,7 +9,7 @@ export const ShowcaseSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const ShowcaseContainer = styled.div`
   position: relative;
@@ -48,8 +48,8 @@ export const ShowcaseContainer = styled.div`
     animation: arrow 0.6s 4.5s alternate infinite;
     color: ${(p) => p.theme.primary};
   }
-`
-export const BgImage = styled(NextImage)``
+`;
+export const BgImage = styled(NextImage)``;
 
 export const Text = styled.p`
   height: 2.2rem;
@@ -59,7 +59,7 @@ export const Text = styled.p`
   color: ${(p) => p.theme.gray600};
   white-space: nowrap;
   overflow: hidden;
-`
+`;
 export const ShowcaseDescription = styled.div`
   @keyframes appear {
     0% {
@@ -100,26 +100,32 @@ export const ShowcaseDescription = styled.div`
   }
   p:nth-child(2) {
     width: 9.5rem;
-    animation: appear 1.1s normal, cursors 0.5s infinite normal,
+    animation:
+      appear 1.1s normal,
+      cursors 0.5s infinite normal,
       writing 1s 1s steps(9) normal;
   }
   p:nth-child(4) {
     width: 14rem;
-    animation: appear 2.2s normal, cursors 0.5s infinite normal,
+    animation:
+      appear 2.2s normal,
+      cursors 0.5s infinite normal,
       writing 1s 2.1s steps(12) normal;
   }
   p:nth-child(6) {
     width: 9.6rem;
     border-right: 2px solid ${(p) => p.theme.text};
-    animation: appear 3.3s normal, cursors 0.7s infinite normal,
+    animation:
+      appear 3.3s normal,
+      cursors 0.7s infinite normal,
       writing 1s 3.2s steps(9) normal;
   }
 
   @media screen and (width <= 650px) {
     padding-left: 10%;
   }
-`
+`;
 export const Strong = styled.strong`
   color: ${(p) => p.theme.text};
   font-size: 2rem;
-`
+`;

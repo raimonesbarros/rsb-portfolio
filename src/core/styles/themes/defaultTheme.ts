@@ -9,4 +9,4 @@ export const defaultTheme = {
   gray300: "#333333",
   gray600: "#666666",
   gray800: "#888888",
-} as const
+} as const;

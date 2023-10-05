@@ -1,7 +1,7 @@
-import { TagContent } from "./Tag.styles"
+import { TagContent } from "./Tag.styles";
 
 const Tag = ({ content }: TagProps) => {
-  return <TagContent $variant={content}>{content}</TagContent>
-}
+  return <TagContent $variant={content}>{content}</TagContent>;
+};
 
-export default Tag
+export default Tag;

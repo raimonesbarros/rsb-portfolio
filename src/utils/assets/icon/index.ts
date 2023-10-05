@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 export {
   FilePdf,
   FileXls,
@@ -15,4 +16,4 @@ export {
   LinkedinLogo,
   WhatsappLogo,
   FileX,
-} from "@phosphor-icons/react"
+} from "@phosphor-icons/react";

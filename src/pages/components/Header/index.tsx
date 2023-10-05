@@ -43,7 +43,7 @@ const Header = () => {
                 key={label}
                 href={href}
                 to={to}
-                smooth={true}
+                smooth
                 offset={-76}
                 duration={500}
                 onClick={() => navigateTo(`${href}`)}
