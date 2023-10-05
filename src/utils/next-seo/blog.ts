@@ -1,5 +1,5 @@
-const title = "Raimones | Blog"
-const description = "Blog do desenvolvedor front-end Raimones Barros"
+const title = "Raimones | Blog";
+const description = "Blog do desenvolvedor front-end Raimones Barros";
 
 export const SEOBlog: SEOProps = {
   title,
@@ -20,4 +20,4 @@ export const SEOBlog: SEOProps = {
       },
     ],
   },
-}
+};

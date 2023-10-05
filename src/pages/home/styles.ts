@@ -1,6 +1,6 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
-export const HomeContainer = styled.main``
+export const HomeContainer = styled.main``;
 
 export const Title = styled.h2`
   justify-content: center;
@@ -14,6 +14,6 @@ export const Title = styled.h2`
   font-family: "Roboto";
   font-weight: 100;
   color: ${(p) => p.theme.text};
-`
-export const Strong = styled.strong``
-export const Span = styled.span``
+`;
+export const Strong = styled.strong``;
+export const Span = styled.span``;

@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const BlogPostsContainer = styled.div`
   width: 100%;
@@ -24,8 +24,8 @@ export const BlogPostsContainer = styled.div`
       margin-bottom: 5rem;
     }
   }
-`
-export const Span = styled.span``
+`;
+export const Span = styled.span``;
 
 export const Title = styled.p`
   font-size: 1.25rem;
@@ -33,7 +33,7 @@ export const Title = styled.p`
   margin-top: -0.8rem;
 
   color: ${(p) => p.theme.text};
-`
+`;
 
 export const Header = styled.div`
   display: flex;
@@ -50,4 +50,4 @@ export const Header = styled.div`
     text-align: end;
     color: ${(p) => p.theme.gray800};
   }
-`
+`;

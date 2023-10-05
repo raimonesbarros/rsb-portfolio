@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const BlogContainer = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const BlogContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-`
+`;
 export const BlogInfo = styled.div`
   width: 100%;
   display: flex;
@@ -21,19 +21,19 @@ export const BlogInfo = styled.div`
     font-size: 0.875rem;
     color: ${(p) => p.theme.gray800};
   }
-`
+`;
 export const Span = styled.span`
   font-size: 0.875rem;
   color: ${(p) => p.theme.gray800};
-`
+`;
 
 export const Text = styled.p`
   font-size: 1.15rem;
   font-weight: 700;
   color: ${(p) => p.theme.text};
-`
+`;
 
-export const FormContainer = styled.form``
+export const FormContainer = styled.form``;
 export const Input = styled.input`
   width: 100%;
 
@@ -57,11 +57,11 @@ export const Input = styled.input`
     outline: 0;
     box-shadow: 0 0 0 2px ${(p) => p.theme.primary};
   }
-`
+`;
 
 export const Button = styled.button`
   display: none;
-`
+`;
 
 export const PostContainer = styled.div`
   width: 100%;
@@ -80,4 +80,4 @@ export const PostContainer = styled.div`
       filter: brightness(1.5);
     }
   }
-`
+`;

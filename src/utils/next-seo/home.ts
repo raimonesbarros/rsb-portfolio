@@ -1,5 +1,5 @@
-const title = "Raimones | Portfólio"
-const description = "Portfólio front-end do desenvolvedor Raimones Barros"
+const title = "Raimones | Portfólio";
+const description = "Portfólio front-end do desenvolvedor Raimones Barros";
 
 export const SEOMain: SEOProps = {
   title,
@@ -20,4 +20,4 @@ export const SEOMain: SEOProps = {
       },
     ],
   },
-}
+};

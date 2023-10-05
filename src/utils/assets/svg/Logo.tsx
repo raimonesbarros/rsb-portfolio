@@ -14,7 +14,7 @@ const Logo = ({ className, handleClick }: SvgProps) => {
         fill="#45C7AF"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

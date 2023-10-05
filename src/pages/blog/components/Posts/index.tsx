@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { BlogPostsContainer, Header, Span, Title } from "./styles"
-import { ReactMarkdown, formatDistanceToNow, ptBR } from "~/modules"
+import { ReactMarkdown, formatDistanceToNow, ptBR } from "~/modules";
+import { BlogPostsContainer, Header, Span, Title } from "./styles";
 
 const Posts = ({ id, title, createdAt, body, onPostViewer }: BlogPostProps) => {
   return (
@@ -18,7 +17,7 @@ const Posts = ({ id, title, createdAt, body, onPostViewer }: BlogPostProps) => {
         <ReactMarkdown>{body}</ReactMarkdown>
       </Span>
     </BlogPostsContainer>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;

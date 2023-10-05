@@ -23,7 +23,7 @@ export default class FireStoreProvider {
   fetchClientProvider = async (): Promise<Projects> => {
     const firestoreData = await FirestoreService.getDocData(
       process.env.NEXT_PUBLIC_FIREBASE_COLLECTION || "",
-      process.env.NEXT_PUBLIC_FIREBASE_DOC_NAME || ""
+      process.env.NEXT_PUBLIC_FIREBASE_DOC_NAME || "",
     );
 
     const projectsPath = firestoreData.filePath;

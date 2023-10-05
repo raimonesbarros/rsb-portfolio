@@ -1,46 +1,15 @@
 import { Link, animateScroll, useRouter, useState } from "~/modules";
 import { List, LogoSvg, X } from "~/utils/assets";
+import { links } from "./nav-links";
 import {
   BtnMenu,
   HeaderContainer,
   HeaderContent,
   Icon,
+  LinkTo,
   Navbar,
   Socials,
 } from "./styles";
-
-const links = [
-  {
-    href: "/#",
-    to: "showcase",
-    content: "INÍCIO",
-    label: "ir para o inicio",
-  },
-  {
-    href: "/projects",
-    to: "/",
-    content: "PROJETOS",
-    label: "ir para projetos",
-  },
-  {
-    href: "/blog",
-    to: "/",
-    content: "BLOG",
-    label: "ir para blog",
-  },
-  {
-    href: "/#about",
-    to: "about",
-    content: "SOBRE",
-    label: "ir para sessão sobre",
-  },
-  {
-    href: "/#contact",
-    to: "contact",
-    content: "CONTATO",
-    label: "ir para sessão contatos",
-  },
-];
 
 const Header = () => {
   const navigate = useRouter();
@@ -60,17 +29,13 @@ const Header = () => {
   return (
     <HeaderContainer $state={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
       <HeaderContent onClick={(e) => e.stopPropagation()}>
-        <Link
+        <LinkTo
           href="/"
-          to={"/"}
-          smooth={true}
-          offset={-76}
-          duration={500}
           onClick={() => navigateToPage("/")}
           aria-label="Ir para o início"
         >
           <LogoSvg alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que" />
-        </Link>
+        </LinkTo>
         <Navbar $state={menuIsOpen}>
           {links.map(({ href, to, content, label }) => {
             return (
@@ -78,7 +43,7 @@ const Header = () => {
                 key={label}
                 href={href}
                 to={to}
-                smooth={true}
+                smooth
                 offset={-76}
                 duration={500}
                 onClick={() => navigateTo(`${href}`)}
@@ -89,7 +54,7 @@ const Header = () => {
             );
           })}
           <Socials onClick={() => setMenuIsOpen(false)}>
-            <a
+            <LinkTo
               href="https://www.linkedin.com/in/raimones-barros/"
               target="_blank"
               rel="noreferrer"
@@ -101,8 +66,8 @@ const Header = () => {
                 alt="ícone do linkedin"
                 title="ícone do Linkedin"
               />
-            </a>
-            <a
+            </LinkTo>
+            <LinkTo
               href="https://github.com/raimonesbarros"
               target="_blank"
               rel="noreferrer"
@@ -114,7 +79,7 @@ const Header = () => {
                 alt="ícone do github"
                 title="ícone do Github"
               />
-            </a>
+            </LinkTo>
           </Socials>
         </Navbar>
         <BtnMenu>

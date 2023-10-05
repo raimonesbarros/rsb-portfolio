@@ -1,8 +1,8 @@
-import { NextSeo } from "~/modules"
+import { NextSeo } from "~/modules";
 
 interface SEODinamicProps {
-  description: string
-  postId: string | number
+  description: string;
+  postId: string | number;
 }
 
 const SEODinamic = ({ description, postId }: SEODinamicProps) => (
@@ -24,6 +24,6 @@ const SEODinamic = ({ description, postId }: SEODinamicProps) => (
       ],
     }}
   />
-)
+);
 
-export default SEODinamic
+export default SEODinamic;

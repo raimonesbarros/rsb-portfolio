@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const ProjectsSection = styled.section`
   width: 100%;
@@ -9,7 +9,7 @@ export const ProjectsSection = styled.section`
 
   padding: 0 1rem;
   margin-top: 4.75rem;
-`
+`;
 export const ProjectsContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -18,7 +18,7 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-`
+`;
 export const ProjectsContent = styled.div`
   width: 100%;
   height: 100%;
@@ -32,4 +32,4 @@ export const ProjectsContent = styled.div`
   @media screen and (width < 768px) {
     flex-direction: column;
   }
-`
+`;

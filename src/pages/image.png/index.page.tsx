@@ -1,6 +1,6 @@
 import Image from "next/image";
-import favicon from "public/favicon.png";
 import { blog1, home, projects } from "~/utils/assets";
+import favicon from "public/favicon.png";
 
 const ImageLink = () => {
   return (

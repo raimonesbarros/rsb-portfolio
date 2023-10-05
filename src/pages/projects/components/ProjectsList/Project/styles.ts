@@ -1,4 +1,4 @@
-import { NextImage, styled } from "~/modules"
+import { NextImage, styled } from "~/modules";
 
 export const ProjectContainer = styled.div`
   width: 100%;
@@ -21,12 +21,12 @@ export const ProjectContainer = styled.div`
     width: 10rem;
     height: 100%;
   }
-`
-export const Image = styled(NextImage)``
+`;
+export const Image = styled(NextImage)``;
 
-export const Subtitle = styled.h3``
+export const Subtitle = styled.h3``;
 
-export const Text = styled.p``
+export const Text = styled.p``;
 
 export const ProjectInfo = styled.div`
   width: 100%;
@@ -35,4 +35,4 @@ export const ProjectInfo = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
-`
+`;

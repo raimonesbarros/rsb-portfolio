@@ -1,7 +1,7 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 interface NavbarProps {
-  $state: boolean
+  $state: boolean;
 }
 
 export const HeaderContainer = styled.header<NavbarProps>`
@@ -20,7 +20,7 @@ export const HeaderContainer = styled.header<NavbarProps>`
   background: ${(props) =>
     props.$state ? props.theme.shade : props.theme.background};
   z-index: 99;
-`
+`;
 
 export const HeaderContent = styled.div`
   width: 100%;
@@ -48,7 +48,9 @@ export const HeaderContent = styled.div`
       display: none;
     }
   }
-`
+`;
+
+export const LinkTo = styled.a``;
 
 export const Navbar = styled.nav<NavbarProps>`
   @keyframes appearMenu {
@@ -110,7 +112,7 @@ export const Navbar = styled.nav<NavbarProps>`
       ${(p) => p.theme.gray100}
     );
   }
-`
+`;
 export const Socials = styled.div`
   display: flex;
   align-items: center;
@@ -126,10 +128,10 @@ export const Socials = styled.div`
   @media screen and (width <= 768px) {
     margin-top: 0.5rem;
   }
-`
+`;
 export const BtnMenu = styled.div`
   margin-top: 1rem;
   color: ${(p) => p.theme.primary};
-`
+`;
 
-export const Icon = styled.img``
+export const Icon = styled.img``;

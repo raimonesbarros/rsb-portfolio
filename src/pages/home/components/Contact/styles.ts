@@ -1,11 +1,11 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const ContactSection = styled.section`
   width: 100%;
 
   display: flex;
   justify-content: center;
-`
+`;
 export const ContactContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -15,7 +15,7 @@ export const ContactContainer = styled.div`
   align-items: center;
 
   border-bottom: 1px solid ${(p) => p.theme.gray600};
-`
+`;
 export const ContactsList = styled.address`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -29,7 +29,7 @@ export const ContactsList = styled.address`
   @media screen and (width < 375px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 export const ContactCard = styled.div`
   width: 100%;
   max-width: 170px;
@@ -39,13 +39,13 @@ export const ContactCard = styled.div`
   svg {
     color: ${(p) => p.theme.primary};
   }
-`
+`;
 export const Link = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 export const Text = styled.p`
   padding: 0.5rem 0;
   font-style: normal;
-`
+`;
