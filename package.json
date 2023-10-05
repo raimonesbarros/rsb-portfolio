@@ -62,6 +62,6 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "17.7.0",
-    "@types/react-scroll": "1.8.7"
+    "@types/react-scroll": "1.8.8"
   }
 }
