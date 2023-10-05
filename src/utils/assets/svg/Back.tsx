@@ -26,7 +26,7 @@ const Back = ({ className, handleClick }: SvgProps) => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default Back
+export default Back;

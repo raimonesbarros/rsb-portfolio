@@ -1,4 +1,4 @@
-import { styled } from "~/modules"
+import { styled } from "~/modules";
 
 export const ProjectsListContainer = styled.div`
   display: flex;
@@ -18,4 +18,4 @@ export const ProjectsListContainer = styled.div`
     max-width: 600px;
     margin: auto;
   }
-`
+`;

@@ -14,7 +14,7 @@ const Comment = ({ className, handleClick }: SvgProps) => {
         fill="#3A536B"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Comment
+export default Comment;

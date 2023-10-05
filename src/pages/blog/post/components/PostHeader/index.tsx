@@ -48,7 +48,7 @@ const PostHeader = ({ post }: PostHeaderProps) => {
         </Text>
         <Text>
           <CommentSvg />
-          <Span>{post.comments + " comentários"}</Span>
+          <Span>{`${post.comments} comentários`}</Span>
         </Text>
       </PostHeaderInfo>
     </PostHeaderContainer>

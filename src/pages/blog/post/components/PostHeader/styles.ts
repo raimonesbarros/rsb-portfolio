@@ -1,4 +1,4 @@
-import { NextLink, styled } from "~/modules"
+import { NextLink, styled } from "~/modules";
 
 export const PostHeaderContainer = styled.div`
   background: ${(p) => p.theme.gray300};
@@ -6,7 +6,7 @@ export const PostHeaderContainer = styled.div`
   border-radius: 8px;
 
   padding: 1rem;
-`
+`;
 export const Title = styled.h1`
   font-size: 1.5rem;
   font-weight: 700;
@@ -15,8 +15,8 @@ export const Title = styled.h1`
   margin-top: 1.25rem;
 
   color: ${(p) => p.theme.text};
-`
-export const Span = styled.span``
+`;
+export const Span = styled.span``;
 
 export const PostHeaderLinks = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const PostHeaderLinks = styled.div`
     gap: 0.5rem;
     color: ${(p) => p.theme.primary};
   }
-`
+`;
 export const PostHeaderInfo = styled.div`
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@ export const PostHeaderInfo = styled.div`
   @media screen and (width <= 768px) {
     gap: 1rem;
   }
-`
+`;
 export const Text = styled.p`
   display: flex;
   align-items: center;
@@ -62,5 +62,5 @@ export const Text = styled.p`
     flex-grow: 0;
     color: ${(p) => p.theme.text};
   }
-`
-export const Link = styled(NextLink)``
+`;
+export const Link = styled(NextLink)``;

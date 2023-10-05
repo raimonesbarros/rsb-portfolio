@@ -47,9 +47,9 @@ const Blog = (props: IssueInfoType) => {
     reset();
   }
 
-  function handlePostViewer(postNumber: number | undefined) {
+  const handlePostViewer = (postNumber: number | undefined) => {
     navigate.push(`/blog/post/${postNumber}`);
-  }
+  };
 
   return (
     <>
@@ -73,7 +73,7 @@ const Blog = (props: IssueInfoType) => {
             placeholder="Buscar conteúdo"
             {...register("search")}
           />
-          <Button type="submit" disabled={isSubmitting}></Button>
+          <Button type="submit" disabled={isSubmitting} />
         </FormContainer>
         <PostContainer>
           {issues.items && issues.items.length > 0 ? (

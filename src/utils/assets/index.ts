@@ -1,3 +1,3 @@
-export * from "./icon"
-export * from "./png"
-export * from "./svg"
+export * from "./icon";
+export * from "./png";
+export * from "./svg";

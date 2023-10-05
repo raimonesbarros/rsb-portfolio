@@ -1,16 +1,11 @@
 import { store } from "~/core";
-import {
-  GetStaticProps,
-  NextSeo,
-  observer,
-  useDynamicRouter,
-  useEffect,
-} from "~/modules";
+import { GetStaticProps, NextSeo, observer, useEffect } from "~/modules";
 import { SEOProjects, useStores } from "~/utils";
-import { Footer, HandleFallback, Header } from "../components";
+import { Footer, Header } from "../components";
 import { MainTitle } from "../styles";
 import { ProjectsList, Viewer } from "./components";
 import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles";
+
 type Props = {
   projectsData: Projects;
 };
@@ -22,18 +17,9 @@ const Projects = ({ projectsData }: Props) => {
       changeCurrentProject,
     },
   } = useStores();
-  const { isFallback } = useDynamicRouter();
-
-  if (isFallback) {
-    return <HandleFallback />;
-  }
-
-  const handleFetchClientProvider = async () => {
-    await fetchClientProvider();
-  };
 
   useEffect(() => {
-    handleFetchClientProvider();
+    fetchClientProvider();
   }, []);
 
   return (

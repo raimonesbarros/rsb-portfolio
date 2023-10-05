@@ -1,5 +1,5 @@
 declare interface SvgProps {
-  className?: string
-  alt?: string
-  handleClick?: () => void
+  className?: string;
+  alt?: string;
+  handleClick?: () => void;
 }

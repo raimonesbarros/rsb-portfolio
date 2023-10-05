@@ -1,6 +1,6 @@
-const title = "Raimones | Projetos"
+const title = "Raimones | Projetos";
 const description =
-  "Projetos do portfólio front-end do desenvolvedor Raimones Barros"
+  "Projetos do portfólio front-end do desenvolvedor Raimones Barros";
 
 export const SEOProjects: SEOProps = {
   title,
@@ -21,4 +21,4 @@ export const SEOProjects: SEOProps = {
       },
     ],
   },
-}
+};
