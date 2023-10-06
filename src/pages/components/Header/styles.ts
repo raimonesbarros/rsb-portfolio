@@ -132,6 +132,8 @@ export const Socials = styled.div`
 export const BtnMenu = styled.div`
   margin-top: 1rem;
   color: ${(p) => p.theme.primary};
+
+  cursor: pointer;
 `;
 
 export const Icon = styled.img``;

@@ -7,6 +7,7 @@ export const AboutSection = styled.section`
   flex-direction: column;
   align-items: center;
 `;
+
 export const AboutContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -31,9 +32,12 @@ export const AboutContainer = styled.div`
   @media screen and (width < 768px) {
     img {
       opacity: 0.7;
+      width: 100%;
+      max-width: 400px;
     }
   }
 `;
+
 export const BgImage = styled(NextImage).attrs({
   width: 400,
 })``;
@@ -46,6 +50,7 @@ export const AboutContent = styled.div`
   justify-content: flex-end;
   padding: 1rem;
 `;
+
 export const Text = styled.p`
   max-width: 500px;
   padding-top: 2rem;
@@ -58,6 +63,7 @@ export const Text = styled.p`
   color: ${(p) => p.theme.text};
   z-index: 1;
 `;
+
 export const Button = styled.button`
   padding: 0.5rem 3.5rem;
   font-weight: 700;
@@ -78,3 +84,5 @@ export const Button = styled.button`
     transition: all 0.2s;
   }
 `;
+
+export const Strong = styled.strong``;

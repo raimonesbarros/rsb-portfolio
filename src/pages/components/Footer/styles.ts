@@ -53,8 +53,3 @@ export const Text = styled.p`
     align-items: center;
   }
 `;
-export const Icon = styled.span`
-  svg {
-    color: ${(p) => p.theme.primary};
-  }
-`;

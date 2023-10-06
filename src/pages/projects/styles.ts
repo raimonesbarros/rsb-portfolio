@@ -10,6 +10,7 @@ export const ProjectsSection = styled.section`
   padding: 0 1rem;
   margin-top: 4.75rem;
 `;
+
 export const ProjectsContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -19,6 +20,7 @@ export const ProjectsContainer = styled.div`
   align-items: center;
   flex-grow: 1;
 `;
+
 export const ProjectsContent = styled.div`
   width: 100%;
   height: 100%;

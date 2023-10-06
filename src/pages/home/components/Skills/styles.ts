@@ -5,6 +5,7 @@ export const SkillsSection = styled.section`
   flex-direction: column;
   align-items: center;
 `;
+
 export const SkillsContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -17,7 +18,8 @@ export const SkillsContainer = styled.div`
   align-items: center;
   gap: 3rem;
 `;
-export const Cards = styled.div`
+
+export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 2rem;
@@ -31,6 +33,7 @@ export const Cards = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
 export const Card = styled.div`
   min-width: 232px;
   min-height: 120px;
@@ -45,6 +48,7 @@ export const Card = styled.div`
   border: 1px solid ${(props) => props.theme.gray300};
   border-radius: 6px;
 `;
+
 export const Heading = styled.h3`
   display: flex;
   align-items: center;
@@ -54,6 +58,7 @@ export const Heading = styled.h3`
     color: ${(p) => p.theme.primary};
   }
 `;
+
 export const Text = styled.p`
   text-align: center;
   font-weight: 100;
@@ -61,6 +66,7 @@ export const Text = styled.p`
   letter-spacing: 0.06rem;
   color: ${(p) => p.theme.text};
 `;
+
 export const TechsContent = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -73,18 +79,27 @@ export const TechsContent = styled.div`
 
   border-bottom: 1px solid ${(p) => p.theme.gray600};
 `;
+
 export const Techs = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   flex-wrap: wrap;
 
   padding: 1rem 3rem;
 
-  img:nth-child(2),
-  img:nth-child(6) {
-    margin-left: 0.5rem;
+  div:nth-child(2),
+  div:nth-child(6) {
+    padding-top: 0.5rem;
+  }
+
+  &:has(div:hover) {
+    div:hover {
+      filter: brightness(1.2);
+    }
+    div:not(:hover) {
+      opacity: 0.7;
+    }
   }
 
   @media screen and (width <= 768px) {
@@ -96,4 +111,19 @@ export const Techs = styled.div`
   }
 `;
 
+export const Tech = styled.div`
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    margin-bottom: 10px;
+  }
+`;
+
 export const Icon = styled.img``;
+
+export const Strong = styled.strong``;

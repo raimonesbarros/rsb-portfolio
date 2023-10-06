@@ -7,6 +7,7 @@ export const PostHeaderContainer = styled.div`
 
   padding: 1rem;
 `;
+
 export const Title = styled.h1`
   font-size: 1.5rem;
   font-weight: 700;
@@ -16,6 +17,7 @@ export const Title = styled.h1`
 
   color: ${(p) => p.theme.text};
 `;
+
 export const Span = styled.span``;
 
 export const PostHeaderLinks = styled.div`
@@ -33,6 +35,7 @@ export const PostHeaderLinks = styled.div`
     color: ${(p) => p.theme.primary};
   }
 `;
+
 export const PostHeaderInfo = styled.div`
   display: flex;
   align-items: center;
@@ -43,6 +46,7 @@ export const PostHeaderInfo = styled.div`
     gap: 1rem;
   }
 `;
+
 export const Text = styled.p`
   display: flex;
   align-items: center;
@@ -63,4 +67,5 @@ export const Text = styled.p`
     color: ${(p) => p.theme.text};
   }
 `;
+
 export const Link = styled(NextLink)``;

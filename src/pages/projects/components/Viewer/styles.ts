@@ -10,6 +10,7 @@ export const ViewerContainer = styled.div`
     height: 100%;
   }
 `;
+
 export const ViewerContent = styled.div`
   height: 100%;
 
@@ -24,13 +25,16 @@ export const ViewerContent = styled.div`
     margin: auto;
   }
 `;
+
 export const Subtitle = styled.h2`
   padding: 0.5rem 0;
 `;
+
 export const FullImage = styled(NextImage)`
   width: 100%;
   height: 100%;
 `;
+
 export const Tags = styled.div``;
 
 export const Link = styled.a`

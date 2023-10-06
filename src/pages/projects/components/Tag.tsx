@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { TagContent } from "./Tag.styles";
 
-const Tag = ({ content }: TagProps) => {
-  return <TagContent $variant={content}>{content}</TagContent>;
-};
+const Tag: FC<TagProps> = ({ content }) => (
+  <TagContent $variant={content}>{content}</TagContent>
+);
 
 export default Tag;

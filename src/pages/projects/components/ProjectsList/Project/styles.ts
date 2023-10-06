@@ -22,6 +22,7 @@ export const ProjectContainer = styled.div`
     height: 100%;
   }
 `;
+
 export const Image = styled(NextImage)``;
 
 export const Subtitle = styled.h3``;

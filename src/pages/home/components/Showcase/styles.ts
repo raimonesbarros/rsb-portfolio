@@ -49,6 +49,7 @@ export const ShowcaseContainer = styled.div`
     color: ${(p) => p.theme.primary};
   }
 `;
+
 export const BgImage = styled(NextImage)``;
 
 export const Text = styled.p`
@@ -60,6 +61,7 @@ export const Text = styled.p`
   white-space: nowrap;
   overflow: hidden;
 `;
+
 export const ShowcaseDescription = styled.div`
   @keyframes appear {
     0% {
@@ -125,6 +127,7 @@ export const ShowcaseDescription = styled.div`
     padding-left: 10%;
   }
 `;
+
 export const Strong = styled.strong`
   color: ${(p) => p.theme.text};
   font-size: 2rem;

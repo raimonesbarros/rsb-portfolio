@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { store } from "~/core";
 import { GetStaticProps, NextSeo, observer, useEffect } from "~/modules";
 import { SEOProjects, useStores } from "~/utils";
@@ -9,7 +10,8 @@ import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles";
 type Props = {
   projectsData: Projects;
 };
-const Projects = ({ projectsData }: Props) => {
+
+const Projects: FC<Props> = ({ projectsData }) => {
   const {
     firestoreProvider: {
       fetchClientProvider,

@@ -1,15 +1,17 @@
+import { FC } from "react";
+import { Subtitle } from "~/pages/components";
 import { FilePdf, me } from "~/utils";
-import { Span, Strong, Title } from "../../styles";
 import {
   AboutContainer,
   AboutContent,
   AboutSection,
   BgImage,
   Button,
+  Strong,
   Text,
 } from "./styles";
 
-const About = () => {
+const About: FC = () => {
   const handleDownload = () => {
     fetch("Raimones-dev-Curriculo.pdf").then((response) => {
       response.blob().then((blob) => {
@@ -25,9 +27,7 @@ const About = () => {
   return (
     <AboutSection id="about">
       <AboutContainer>
-        <Title>
-          <Span>um pouco</Span> <Strong>Sobre mim</Strong>
-        </Title>
+        <Subtitle bold="Sobre mim" normal="um pouco" reverse />
         <BgImage src={me} alt="imagem de fundo: Foto de Raimones" />
         <AboutContent>
           <Text>

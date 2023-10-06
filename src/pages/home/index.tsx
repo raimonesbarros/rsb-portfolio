@@ -1,27 +1,20 @@
-import { NextSeo, useDynamicRouter } from "~/modules";
+import { NextSeo } from "~/modules";
 import { SEOMain } from "~/utils";
-import { Footer, HandleFallback, Header } from "../components";
+import { BackToTop, Footer, Header } from "../components";
 import { About, Contact, Showcase, Skills } from "./components";
 import { HomeContainer } from "./styles";
 
-const Home = () => {
-  const { isFallback } = useDynamicRouter();
-
-  if (isFallback) {
-    return <HandleFallback />;
-  }
-
-  return (
-    <HomeContainer>
-      <NextSeo {...SEOMain} />
-      <Header />
-      <Showcase />
-      <Skills />
-      <About />
-      <Contact />
-      <Footer />
-    </HomeContainer>
-  );
-};
+const Home = () => (
+  <HomeContainer>
+    <NextSeo {...SEOMain} />
+    <Header />
+    <Showcase />
+    <Skills />
+    <About />
+    <Contact />
+    <Footer />
+    <BackToTop />
+  </HomeContainer>
+);
 
 export default Home;
