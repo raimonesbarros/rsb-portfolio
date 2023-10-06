@@ -11,6 +11,7 @@ export const BlogContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const BlogInfo = styled.div`
   width: 100%;
   display: flex;
@@ -22,6 +23,7 @@ export const BlogInfo = styled.div`
     color: ${(p) => p.theme.gray800};
   }
 `;
+
 export const Span = styled.span`
   font-size: 0.875rem;
   color: ${(p) => p.theme.gray800};

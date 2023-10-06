@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { api } from "~/infra/api";
 import {
   GetStaticPaths,
@@ -10,7 +11,7 @@ import { JsonLdDinamic, SEODinamic } from "~/utils";
 import { PostHeader } from "./components";
 import { PostContainer, PostContent } from "./styles";
 
-const Post = ({ post }: CurrentPostType) => {
+const Post: FC<CurrentPostType> = ({ post }) => {
   const { query } = useDynamicRouter();
 
   const blogPost = {

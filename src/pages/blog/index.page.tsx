@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { api } from "~/infra/api";
 import {
   GetStaticProps,
@@ -7,7 +8,7 @@ import {
   useState,
 } from "~/modules";
 import { SEOBlog } from "~/utils/next-seo";
-import { Footer, Header } from "../components";
+import { BackToTop, Footer, Header } from "../components";
 import { EmptyBlog, Posts } from "./components";
 import {
   BlogContainer,
@@ -20,7 +21,7 @@ import {
   Text,
 } from "./styles";
 
-const Blog = (props: IssueInfoType) => {
+const Blog: FC<IssueInfoType> = (props) => {
   const [issues, setIssues] = useState<IssueInfoType>(props);
   const navigate = useRouter();
   const {
@@ -93,6 +94,7 @@ const Blog = (props: IssueInfoType) => {
         </PostContainer>
       </BlogContainer>
       <Footer />
+      <BackToTop />
     </>
   );
 };

@@ -6,6 +6,7 @@ export const ContactSection = styled.section`
   display: flex;
   justify-content: center;
 `;
+
 export const ContactContainer = styled.div`
   width: 100%;
   max-width: 1120px;
@@ -16,6 +17,7 @@ export const ContactContainer = styled.div`
 
   border-bottom: 1px solid ${(p) => p.theme.gray600};
 `;
+
 export const ContactsList = styled.address`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -30,6 +32,7 @@ export const ContactsList = styled.address`
     grid-template-columns: 1fr;
   }
 `;
+
 export const ContactCard = styled.div`
   width: 100%;
   max-width: 170px;
@@ -38,14 +41,21 @@ export const ContactCard = styled.div`
 
   svg {
     color: ${(p) => p.theme.primary};
+    margin-bottom: 0.5rem;
   }
 `;
+
 export const Link = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
 export const Text = styled.p`
-  padding: 0.5rem 0;
+  font-style: normal;
+  padding: 0.1rem 0;
+`;
+
+export const Strong = styled.strong`
   font-style: normal;
 `;

@@ -25,6 +25,7 @@ export const BlogPostsContainer = styled.div`
     }
   }
 `;
+
 export const Span = styled.span``;
 
 export const Title = styled.p`

@@ -6,6 +6,7 @@ export const PostContainer = styled.section`
   margin: 4.75rem auto 0;
   padding: 0 0.5rem;
 `;
+
 export const PostContent = styled.article`
   width: 100%;
 

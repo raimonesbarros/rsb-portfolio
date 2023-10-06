@@ -9,6 +9,7 @@ export const EmptyBlogContainer = styled.div`
   gap: 2rem;
   text-align: center;
 `;
+
 export const Text = styled.p``;
 export const Strong = styled.strong``;
 export const Small = styled.small`
