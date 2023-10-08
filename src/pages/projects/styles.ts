@@ -31,7 +31,7 @@ export const ProjectsContent = styled.div`
   gap: 2rem;
   overflow: hidden;
 
-  @media screen and (width < 768px) {
+  @media screen and (width <= 768px) {
     flex-direction: column;
   }
 `;

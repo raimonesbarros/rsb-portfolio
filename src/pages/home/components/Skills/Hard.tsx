@@ -3,7 +3,7 @@ import { Icon, Tech, Techs, Text } from "./styles";
 
 const HardSkills: FC = () => (
   <Techs>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/material/language-html5.svg?size=70&color=45c7af"
         width={70}
@@ -12,7 +12,7 @@ const HardSkills: FC = () => (
       />
       <Text>HTML5</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/devicon/css3-plain.svg?size=55&color=45c7af"
         width={55}
@@ -21,7 +21,7 @@ const HardSkills: FC = () => (
       />
       <Text>CSS3</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/material/language-javascript.svg?size=70&color=45c7af"
         width={70}
@@ -30,7 +30,7 @@ const HardSkills: FC = () => (
       />
       <Text>Javascript</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/material/react.svg?size=70&color=45c7af"
         width={65}
@@ -39,7 +39,7 @@ const HardSkills: FC = () => (
       />
       <Text>ReactJS</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/material/language-typescript.svg?size=70&color=45c7af"
         width={70}
@@ -48,7 +48,7 @@ const HardSkills: FC = () => (
       />
       <Text>Typescript</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/feather/figma.svg?size=55&color=45c7af"
         width={55}
@@ -57,7 +57,7 @@ const HardSkills: FC = () => (
       />
       <Text>Figma</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/material/git.svg?size=70&color=45c7af"
         width={70}
@@ -66,7 +66,7 @@ const HardSkills: FC = () => (
       />
       <Text>Git</Text>
     </Tech>
-    <Tech>
+    <Tech tabIndex={0}>
       <Icon
         src="https://icongr.am/material/github.svg?size=70&color=45c7af"
         width={70}

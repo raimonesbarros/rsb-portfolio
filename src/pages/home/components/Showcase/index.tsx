@@ -17,7 +17,6 @@ const Showcase: FC = () => (
       <BgImage
         src={dummy}
         alt="Imagem de fundo: homem sentado de frente para uma tela de computador"
-        width={600}
         priority
       />
       <ShowcaseDescription>

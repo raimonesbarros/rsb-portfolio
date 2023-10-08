@@ -1,4 +1,5 @@
 import { styled } from "~/modules";
+import { LogoSvg } from "~/utils";
 
 interface NavbarProps {
   $state: boolean;
@@ -44,13 +45,17 @@ export const HeaderContent = styled.div`
   }
 
   @media screen and (width > 768px) {
-    > div {
+    > button {
       display: none;
     }
   }
 `;
 
 export const LinkTo = styled.a``;
+
+export const Logo = styled(LogoSvg)`
+  cursor: pointer;
+`;
 
 export const Navbar = styled.nav<NavbarProps>`
   @keyframes appearMenu {
@@ -62,6 +67,7 @@ export const Navbar = styled.nav<NavbarProps>`
       opacity: 1;
     }
   }
+
   animation: appearMenu 0.5s normal;
   display: flex;
   align-items: center;
@@ -96,6 +102,7 @@ export const Navbar = styled.nav<NavbarProps>`
   @media screen and (width > 768px) {
     display: flex;
   }
+
   @media screen and (width <= 768px) {
     display: ${(p) => (p.$state ? "flex" : "none")};
     width: 100%;
@@ -129,7 +136,9 @@ export const Socials = styled.div`
     margin-top: 0.5rem;
   }
 `;
-export const BtnMenu = styled.div`
+
+export const BtnMenu = styled.button`
+  all: unset;
   margin-top: 1rem;
   color: ${(p) => p.theme.primary};
 

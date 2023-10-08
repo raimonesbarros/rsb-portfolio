@@ -9,20 +9,39 @@ export const ViewerContainer = styled.div`
   @media screen and (width > 768px) {
     height: 100%;
   }
+
+  @media screen and (width <= 768px) {
+    min-height: 410px;
+    max-height: 50vh;
+  }
 `;
 
 export const ViewerContent = styled.div`
-  height: 100%;
+  position: relative;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 
   @media screen and (width <= 768px) {
     width: 100%;
+    height: 100%;
     max-width: 600px;
     margin: auto;
+  }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (width <= 768px) {
+    position: absolute;
+    bottom: 0;
+    background-color: ${(p) => p.theme.background}e8;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1;
   }
 `;
 
@@ -30,9 +49,10 @@ export const Subtitle = styled.h2`
   padding: 0.5rem 0;
 `;
 
-export const FullImage = styled(NextImage)`
+export const FullImage = styled(NextImage).attrs({ width: 600, height: 350 })`
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 `;
 
 export const Tags = styled.div``;
@@ -53,7 +73,9 @@ export const Text = styled.p`
 
 export const Buttons = styled.div`
   width: 100%;
+  max-width: 600px;
   padding: 1rem 0;
+  margin: 0 auto;
 
   display: flex;
   justify-content: space-between;
@@ -65,7 +87,7 @@ export const Buttons = styled.div`
     color: ${(p) => p.theme.background};
 
     &:hover {
-      filter: brightness(0.7);
+      filter: brightness(1.2);
     }
   }
 

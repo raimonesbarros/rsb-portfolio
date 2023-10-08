@@ -50,7 +50,7 @@ export const ShowcaseContainer = styled.div`
   }
 `;
 
-export const BgImage = styled(NextImage)``;
+export const BgImage = styled(NextImage).attrs({ width: 600, height: 600 })``;
 
 export const Text = styled.p`
   height: 2.2rem;

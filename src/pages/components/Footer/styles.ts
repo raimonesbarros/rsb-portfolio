@@ -14,7 +14,7 @@ export const FooterContent = styled.div`
   width: 100%;
   max-width: 1120px;
 
-  padding: 0 1rem;
+  padding: 0 4rem;
   line-height: 1;
 
   display: flex;
