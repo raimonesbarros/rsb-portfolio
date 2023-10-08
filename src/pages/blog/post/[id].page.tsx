@@ -1,10 +1,15 @@
 import { FC } from "react";
 import { api } from "~/infra/api";
-import { GetStaticPaths, GetStaticProps, useDynamicRouter } from "~/modules";
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  ReactMarkdown,
+  useDynamicRouter,
+} from "~/modules";
 import { Footer, Header } from "~/pages/components";
 import { JsonLdDinamic, SEODinamic } from "~/utils";
 import { PostHeader } from "./components";
-import { Markdown, PostContainer, PostContent } from "./styles";
+import { PostContainer, PostContent } from "./styles";
 
 const Post: FC<CurrentPostType> = ({ post }) => {
   const { query } = useDynamicRouter();
@@ -44,7 +49,7 @@ const Post: FC<CurrentPostType> = ({ post }) => {
         <SEODinamic postId={post.number} description={post.title} />
         {post.user && <PostHeader post={post} />}
         <PostContent>
-          <Markdown>{post.body}</Markdown>
+          <ReactMarkdown>{post.body}</ReactMarkdown>
         </PostContent>
       </PostContainer>
       <Footer />

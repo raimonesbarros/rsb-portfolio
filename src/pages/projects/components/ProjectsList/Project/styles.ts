@@ -7,12 +7,12 @@ export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
 
-  background: ${(p) => p.theme.background};
+  background: ${(p) => p.theme.gray200};
   border-radius: 8px;
   border: 1px solid transparent;
 
   &:hover {
-    border: 1px solid ${(p) => p.theme.border};
+    border: 1px solid ${(p) => p.theme.gray800};
   }
 
   cursor: pointer;
@@ -25,13 +25,9 @@ export const ProjectContainer = styled.div`
 
 export const Image = styled(NextImage)``;
 
-export const Subtitle = styled.h3`
-  text-align: center;
-`;
+export const Subtitle = styled.h3``;
 
-export const Text = styled.p`
-  text-align: center;
-`;
+export const Text = styled.p``;
 
 export const ProjectInfo = styled.div`
   width: 100%;

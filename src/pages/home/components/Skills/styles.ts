@@ -4,7 +4,6 @@ export const SkillsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${(p) => p.theme.background};
 `;
 
 export const SkillsContainer = styled.div`
@@ -46,7 +45,7 @@ export const Card = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
 
-  border: 1px solid ${(props) => props.theme.border};
+  border: 1px solid ${(props) => props.theme.gray300};
   border-radius: 6px;
 `;
 
@@ -54,7 +53,6 @@ export const Heading = styled.h3`
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: ${(p) => p.theme.textLight};
 
   svg {
     color: ${(p) => p.theme.primary};
@@ -79,7 +77,7 @@ export const TechsContent = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  border-bottom: 1px solid ${(p) => p.theme.border};
+  border-bottom: 1px solid ${(p) => p.theme.gray600};
 `;
 
 export const Techs = styled.div`
@@ -87,6 +85,8 @@ export const Techs = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  padding: 1rem 3rem;
 
   div:nth-child(2),
   div:nth-child(6) {
@@ -126,6 +126,4 @@ export const Tech = styled.div`
 
 export const Icon = styled.img``;
 
-export const Strong = styled.strong`
-  color: ${(p) => p.theme.textLight};
-`;
+export const Strong = styled.strong``;

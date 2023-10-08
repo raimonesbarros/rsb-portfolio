@@ -1,5 +1,5 @@
-import { Link, animateScroll, observer, useRouter, useState } from "~/modules";
-import { List, X } from "~/utils/assets";
+import { Link, animateScroll, useRouter, useState } from "~/modules";
+import { List, LogoSvg, X } from "~/utils/assets";
 import { links } from "./nav-links";
 import {
   BtnMenu,
@@ -7,51 +7,52 @@ import {
   HeaderContent,
   Icon,
   LinkTo,
-  Logo,
   Navbar,
   Socials,
 } from "./styles";
 
 const Header = () => {
-  // const {
-  //   theme: { mode, setDarkTheme, setLightTheme },
-  // } = useStore();
   const navigate = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const navigateToPage = (local: string) => {
+  function navigateToPage(local: string) {
     setMenuIsOpen(false);
     navigate.push(local);
     animateScroll.scrollToTop();
-  };
+  }
 
-  const navigateTo = (local: string) => {
+  function navigateTo(local: string) {
     setMenuIsOpen(false);
     navigate.push(local);
-  };
+  }
 
   return (
     <HeaderContainer $state={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
       <HeaderContent onClick={(e) => e.stopPropagation()}>
-        <Logo
-          alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que"
-          handleClick={() => navigateToPage("/")}
-        />
+        <LinkTo
+          href="/"
+          onClick={() => navigateToPage("/")}
+          aria-label="Ir para o início"
+        >
+          <LogoSvg alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que" />
+        </LinkTo>
         <Navbar $state={menuIsOpen}>
-          {links.map(({ href, to, content, label }) => (
-            <Link
-              key={label}
-              href={href}
-              to={to}
-              smooth
-              offset={-76}
-              duration={500}
-              onClick={() => navigateTo(`${href}`)}
-              aria-label={label}
-            >
-              {content}
-            </Link>
-          ))}
+          {links.map(({ href, to, content, label }) => {
+            return (
+              <Link
+                key={label}
+                href={href}
+                to={to}
+                smooth
+                offset={-76}
+                duration={500}
+                onClick={() => navigateTo(`${href}`)}
+                aria-label={label}
+              >
+                {content}
+              </Link>
+            );
+          })}
           <Socials onClick={() => setMenuIsOpen(false)}>
             <LinkTo
               href="https://www.linkedin.com/in/raimones-barros/"
@@ -61,8 +62,9 @@ const Header = () => {
             >
               <Icon
                 src="https://icongr.am/devicon/linkedin-plain.svg?size=26&color=45c7af"
+                width={26}
                 alt="ícone do linkedin"
-                title="Perfil no Linkedin"
+                title="ícone do Linkedin"
               />
             </LinkTo>
             <LinkTo
@@ -73,25 +75,11 @@ const Header = () => {
             >
               <Icon
                 src="https://icongr.am/fontawesome/github.svg?size=26&color=45c7af"
+                width={26}
                 alt="ícone do github"
-                title="Perfil no Github"
+                title="ícone do Github"
               />
             </LinkTo>
-            {/* {mode === "light" ? (
-              <Icon
-                src="https://icongr.am/feather/moon.svg?size=30&color=333333"
-                alt="ícone de lua"
-                title="Modo escuro"
-                onClick={setDarkTheme}
-              />
-            ) : (
-              <Icon
-                src="https://icongr.am/feather/sun.svg?size=30&color=e4e4d5"
-                alt="ícone de sol"
-                title="Modo claro"
-                onClick={setLightTheme}
-              />
-            )} */}
           </Socials>
         </Navbar>
         <BtnMenu>
@@ -106,4 +94,4 @@ const Header = () => {
   );
 };
 
-export default observer(Header);
+export default Header;

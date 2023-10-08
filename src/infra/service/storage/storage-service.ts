@@ -1,5 +1,3 @@
-import { isClient } from "~/utils";
-
 let Storage: Storage;
 
 if (typeof window !== "undefined") {
@@ -10,14 +8,6 @@ const clearWholeStorage = (): void => {
   Storage.clear();
 };
 
-const getStorageItem = (key: string): any => {
-  if (isClient) {
-    const item = Storage.getItem(key);
-
-    return item;
-  }
-};
-
 const clearStorageItem = (key: string): void => {
   Storage.removeItem(key);
 };
@@ -25,5 +15,4 @@ const clearStorageItem = (key: string): void => {
 export const StorageService = {
   clearStorageItem,
   clearWholeStorage,
-  getStorageItem,
 };

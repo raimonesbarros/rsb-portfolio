@@ -14,8 +14,6 @@ export const Title = styled.h2`
   color: ${(p) => p.theme.text};
 `;
 
-export const Strong = styled.strong`
-  color: ${(p) => p.theme.textLight};
-`;
+export const Strong = styled.strong``;
 
 export const Span = styled.span``;
