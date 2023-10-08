@@ -1,15 +1,10 @@
-import {
-  enableStaticRendering,
-  makeAutoObservable,
-  makePersistable,
-} from "~/modules";
+import { makeAutoObservable, makePersistable } from "~/modules";
 import { defaultTheme, lightTheme } from "..";
 
-enableStaticRendering(typeof window === "undefined");
 export default class ThemeStore {
-  mode: Mode = "" as Mode;
+  mode: Mode = "light" as Mode;
 
-  theme: Theme = {} as Theme;
+  theme: Theme = lightTheme;
 
   constructor() {
     makeAutoObservable(this);
