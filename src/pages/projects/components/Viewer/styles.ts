@@ -22,6 +22,7 @@ export const ViewerContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: ${(p) => p.theme.textLight};
 
   @media screen and (width <= 768px) {
     width: 100%;

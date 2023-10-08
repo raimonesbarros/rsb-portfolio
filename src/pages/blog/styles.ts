@@ -14,6 +14,7 @@ export const BlogContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  color: ${(p) => p.theme.textLight};
 `;
 
 export const BlogInfo = styled.div`
@@ -72,7 +73,7 @@ export const Button = styled.button`
 export const PostContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;

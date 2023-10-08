@@ -7,6 +7,7 @@ export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
 
+  color: ${(p) => p.theme.textLight};
   background: ${(p) => p.theme.background};
   border-radius: 8px;
   border: 1px solid transparent;

@@ -2,10 +2,10 @@ export const lightTheme = {
   primary: "#45C7AF",
 
   text: "#000000",
-  textLight: "#071422",
+  textLight: "#012619",
 
-  background: "#f4f4e5",
-  backgroundLight: "#dddddd",
+  background: "#F9F9F9",
+  backgroundLight: "#E4EAF1",
   border: "#cccccc",
 
   shade: "#ffffff55",

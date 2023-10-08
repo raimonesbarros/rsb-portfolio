@@ -7,6 +7,7 @@ export const BlogPostsContainer = styled.div`
   padding: 2rem;
   border-radius: 10px;
   overflow: hidden;
+  color: ${(p) => p.theme.textLight};
   background: ${(p) => p.theme.background};
 
   > span {
@@ -22,6 +23,7 @@ export const BlogPostsContainer = styled.div`
       width: 100%;
       height: 126px;
       margin-bottom: 5rem;
+      border-radius: 8px;
     }
   }
 `;

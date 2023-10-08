@@ -22,8 +22,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <ThemeProvider
           theme={store.themeStore.mode === "light" ? lightTheme : defaultTheme}
         >
-          <Component {...pageProps} />
-          <GlobalStyle theme={defaultTheme} />
+          {store.themeStore.mode && (
+            <>
+              <Component {...pageProps} />
+              <GlobalStyle theme={defaultTheme} />
+            </>
+          )}
         </ThemeProvider>
       </Provider>
     </>
