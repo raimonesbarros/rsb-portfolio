@@ -1,8 +1,8 @@
 import { NextLink, styled } from "~/modules";
 
 export const PostHeaderContainer = styled.div`
-  background: ${(p) => p.theme.gray300};
-  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+  background: ${(p) => p.theme.backgroundLight};
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 
   padding: 1rem;
@@ -15,7 +15,7 @@ export const Title = styled.h1`
   line-height: 1.3;
   margin-top: 1.25rem;
 
-  color: ${(p) => p.theme.text};
+  color: ${(p) => p.theme.textLight};
 `;
 
 export const Span = styled.span``;

@@ -22,6 +22,7 @@ export const ViewerContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: ${(p) => p.theme.textLight};
 
   @media screen and (width <= 768px) {
     width: 100%;
@@ -83,7 +84,7 @@ export const Buttons = styled.div`
 
   a:nth-child(1) {
     background: ${(p) => p.theme.primary};
-    border: 2px solid ${(p) => p.theme.background};
+    border: 2px solid ${(p) => p.theme.primary};
     color: ${(p) => p.theme.background};
 
     &:hover {
@@ -97,7 +98,7 @@ export const Buttons = styled.div`
     background: ${(p) => p.theme.background};
 
     &:hover {
-      background: ${(p) => p.theme.gray300};
+      background: ${(p) => p.theme.backgroundLight};
     }
   }
 `;

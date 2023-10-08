@@ -5,6 +5,7 @@ export const ContactSection = styled.section`
 
   display: flex;
   justify-content: center;
+  background-color: ${(props) => props.theme.backgroundLight};
 `;
 
 export const ContactContainer = styled.div`
@@ -15,7 +16,7 @@ export const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  border-bottom: 1px solid ${(p) => p.theme.gray600};
+  border-bottom: 1px solid ${(p) => p.theme.border};
 `;
 
 export const ContactsList = styled.address`
@@ -54,8 +55,10 @@ export const Link = styled.a`
 export const Text = styled.p`
   font-style: normal;
   padding: 0.1rem 0;
+  color: ${(p) => p.theme.text};
 `;
 
 export const Strong = styled.strong`
   font-style: normal;
+  color: ${(p) => p.theme.textLight};
 `;

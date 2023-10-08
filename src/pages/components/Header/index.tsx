@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { Link, animateScroll, useRouter, useState } from "~/modules";
+import { Link, animateScroll, observer, useRouter, useState } from "~/modules";
+import { useStores } from "~/utils";
 import { List, X } from "~/utils/assets";
 import { links } from "./nav-links";
 import {
@@ -14,6 +15,9 @@ import {
 } from "./styles";
 
 const Header: FC = () => {
+  const {
+    themeStore: { mode, setDarkTheme, setLightTheme },
+  } = useStores();
   const navigate = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -62,7 +66,6 @@ const Header: FC = () => {
             >
               <Icon
                 src="https://icongr.am/devicon/linkedin-plain.svg?size=26&color=45c7af"
-                width={26}
                 alt="ícone do linkedin"
                 title="Perfil no Linkedin"
               />
@@ -75,11 +78,25 @@ const Header: FC = () => {
             >
               <Icon
                 src="https://icongr.am/fontawesome/github.svg?size=26&color=45c7af"
-                width={26}
                 alt="ícone do github"
                 title="Perfil no Github"
               />
             </LinkTo>
+            {mode === "light" ? (
+              <Icon
+                src="https://icongr.am/feather/moon.svg?size=30&color=333333"
+                alt="ícone de lua"
+                title="Modo escuro"
+                onClick={setDarkTheme}
+              />
+            ) : (
+              <Icon
+                src="https://icongr.am/feather/sun.svg?size=30&color=e4e4d5"
+                alt="ícone de sol"
+                title="Modo claro"
+                onClick={setLightTheme}
+              />
+            )}
           </Socials>
         </Navbar>
         <BtnMenu>
@@ -94,4 +111,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default observer(Header);

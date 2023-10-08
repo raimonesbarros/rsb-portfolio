@@ -7,7 +7,8 @@ export const BlogPostsContainer = styled.div`
   padding: 2rem;
   border-radius: 10px;
   overflow: hidden;
-  background: ${(p) => p.theme.gray100};
+  color: ${(p) => p.theme.textLight};
+  background: ${(p) => p.theme.background};
 
   > span {
     height: 65%;
@@ -20,8 +21,9 @@ export const BlogPostsContainer = styled.div`
 
     img {
       width: 100%;
-      height: 130px;
+      height: 126px;
       margin-bottom: 5rem;
+      border-radius: 8px;
     }
   }
 `;
@@ -33,7 +35,7 @@ export const Title = styled.p`
   font-weight: 700;
   margin-top: -0.8rem;
 
-  color: ${(p) => p.theme.text};
+  color: ${(p) => p.theme.textLight};
 `;
 
 export const Header = styled.div`

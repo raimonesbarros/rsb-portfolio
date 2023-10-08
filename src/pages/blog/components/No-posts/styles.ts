@@ -8,6 +8,7 @@ export const EmptyBlogContainer = styled.div`
   align-items: center;
   gap: 2rem;
   text-align: center;
+  color: ${(p) => p.theme.textLight};
 `;
 
 export const Text = styled.p``;
