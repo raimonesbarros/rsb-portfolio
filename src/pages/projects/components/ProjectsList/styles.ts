@@ -4,6 +4,7 @@ export const ProjectsListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-bottom: 20px;
 
   overflow: auto;
   border-bottom: 2px solid ${(p) => p.theme.gray600};
@@ -15,7 +16,7 @@ export const ProjectsListContainer = styled.div`
   }
   @media screen and (width <= 768px) {
     width: 100%;
-    max-height: calc(100vh - 534px);
+    max-height: calc(100vh - 480px);
     max-width: 600px;
     margin: auto;
   }

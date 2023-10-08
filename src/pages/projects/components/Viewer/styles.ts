@@ -7,11 +7,11 @@ export const ViewerContainer = styled.div`
   flex-direction: column;
 
   @media screen and (width > 768px) {
-    height: 100%;
+    max-height: calc(100vh - 108px);
   }
 
   @media screen and (width <= 768px) {
-    min-height: 410px;
+    min-height: 350px;
     max-height: 50vh;
   }
 `;
