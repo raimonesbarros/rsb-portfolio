@@ -13,7 +13,6 @@ import { EmptyBlog, Posts } from "./components";
 import {
   BlogContainer,
   BlogInfo,
-  BlogSection,
   Button,
   FormContainer,
   Input,
@@ -54,7 +53,7 @@ const Blog: FC<IssueInfoType> = (props) => {
   };
 
   return (
-    <BlogSection>
+    <>
       <Header />
       <BlogContainer>
         <NextSeo {...SEOBlog} />
@@ -96,7 +95,7 @@ const Blog: FC<IssueInfoType> = (props) => {
       </BlogContainer>
       <Footer />
       <BackToTop />
-    </BlogSection>
+    </>
   );
 };
 

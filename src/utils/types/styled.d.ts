@@ -1,8 +1,8 @@
 import "styled-components";
-import store from "~/core/store";
+import { defaultTheme } from "~/core";
 
-type defaultThemeType = ThemeStore<Theme>;
+type defaultThemeType = typeof defaultTheme;
 
 declare module "styled-components" {
-  interface DefaultTheme extends defaultThemeType, store.theme.theme {}
+  interface DefaultTheme extends defaultThemeType, defaultTheme {}
 }

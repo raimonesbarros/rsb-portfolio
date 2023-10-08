@@ -8,7 +8,7 @@ const BackToTop: FC = () => {
 
   return (
     <IconContainer $scroll={scrollY} onClick={animateScroll.scrollToTop}>
-      <ArrowCircleUp size={50} />
+      <ArrowCircleUp size={40} />
     </IconContainer>
   );
 };

@@ -7,7 +7,7 @@ export const BlogPostsContainer = styled.div`
   padding: 2rem;
   border-radius: 10px;
   overflow: hidden;
-  background: ${(p) => p.theme.background};
+  background: ${(p) => p.theme.gray100};
 
   > span {
     height: 65%;
@@ -20,9 +20,8 @@ export const BlogPostsContainer = styled.div`
 
     img {
       width: 100%;
-      height: 126px;
+      height: 130px;
       margin-bottom: 5rem;
-      border-radius: 8px;
     }
   }
 `;
@@ -34,7 +33,7 @@ export const Title = styled.p`
   font-weight: 700;
   margin-top: -0.8rem;
 
-  color: ${(p) => p.theme.textLight};
+  color: ${(p) => p.theme.text};
 `;
 
 export const Header = styled.div`

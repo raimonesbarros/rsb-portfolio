@@ -1,9 +1,5 @@
 import { styled } from "~/modules";
 
-export const BlogSection = styled.section`
-  background-color: ${(p) => p.theme.backgroundLight};
-`;
-
 export const BlogContainer = styled.div`
   width: 100%;
   max-width: 54rem;
@@ -46,14 +42,14 @@ export const Input = styled.input`
   padding: 0.6rem 1rem;
   margin-top: 0.75rem;
 
-  border: 1px solid ${(p) => p.theme.border};
+  border: 1px solid ${(p) => p.theme.gray800};
   border-radius: 6px;
 
   color: ${(p) => p.theme.text};
-  background: ${(p) => p.theme.background}aa;
+  background: ${(p) => p.theme.gray100};
 
   &::placeholder {
-    color: ${(p) => p.theme.textLight};
+    color: ${(p) => p.theme.gray600};
   }
 
   &:hover {
@@ -83,11 +79,7 @@ export const PostContainer = styled.div`
 
     &:hover {
       border: 1px solid ${(p) => p.theme.primary};
-      filter: brightness(1.1);
+      filter: brightness(1.5);
     }
-  }
-
-  @media screen and (width <= 843px) {
-    justify-content: center;
   }
 `;

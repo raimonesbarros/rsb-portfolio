@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { store } from "~/core";
 import { GetStaticProps, NextSeo, observer, useEffect } from "~/modules";
-import { SEOProjects, useStore } from "~/utils";
+import { SEOProjects, useStores } from "~/utils";
 import { Footer, Header } from "../components";
 import { MainTitle } from "../styles";
 import { ProjectsList, Viewer } from "./components";
@@ -18,7 +18,7 @@ const Projects: FC<Props> = ({ projectsData }) => {
       currentProjectId,
       changeCurrentProject,
     },
-  } = useStore();
+  } = useStores();
 
   useEffect(() => {
     fetchClientProvider();

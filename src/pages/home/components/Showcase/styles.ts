@@ -1,9 +1,4 @@
-import { css } from "styled-components";
 import { NextImage, styled } from "~/modules";
-
-type Props = {
-  $light?: boolean;
-};
 
 export const ShowcaseSection = styled.section`
   width: 100%;
@@ -14,11 +9,9 @@ export const ShowcaseSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: ${(p) => p.theme.backgroundLight};
 `;
 
-export const ShowcaseContainer = styled.div<Props>`
+export const ShowcaseContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 1120px;
@@ -26,7 +19,7 @@ export const ShowcaseContainer = styled.div<Props>`
 
   padding: 0 1rem;
 
-  border-bottom: 1px solid ${(p) => p.theme.border};
+  border-bottom: 1px solid ${(p) => p.theme.gray600};
 
   display: flex;
   align-items: center;
@@ -35,7 +28,6 @@ export const ShowcaseContainer = styled.div<Props>`
     position: absolute;
     right: 0;
     bottom: 0;
-    filter: ${(p) => p.$light && css`invert() grayscale() opacity(.6)`};
   }
 
   svg {
@@ -58,14 +50,14 @@ export const ShowcaseContainer = styled.div<Props>`
   }
 `;
 
-export const BgImage = styled(NextImage).attrs({ width: 600, height: 600 })``;
+export const BgImage = styled(NextImage)``;
 
 export const Text = styled.p`
   height: 2.2rem;
   font-size: 1.5rem;
   font-weight: 100;
   font-family: "Roboto";
-  color: ${(p) => p.theme.text};
+  color: ${(p) => p.theme.gray600};
   white-space: nowrap;
   overflow: hidden;
 `;
@@ -86,10 +78,10 @@ export const ShowcaseDescription = styled.div`
   @keyframes writing {
     0% {
       width: 0;
-      border-right: 2px solid ${(p) => p.theme.border};
+      border-right: 2px solid ${(p) => p.theme.gray600};
     }
     100% {
-      border-right: 2px solid ${(p) => p.theme.border};
+      border-right: 2px solid ${(p) => p.theme.gray600};
     }
   }
 
@@ -124,7 +116,7 @@ export const ShowcaseDescription = styled.div`
   }
   p:nth-child(6) {
     width: 9.6rem;
-    border-right: 2px solid ${(p) => p.theme.textLight};
+    border-right: 2px solid ${(p) => p.theme.text};
     animation:
       appear 3.3s normal,
       cursors 0.7s infinite normal,
@@ -137,6 +129,6 @@ export const ShowcaseDescription = styled.div`
 `;
 
 export const Strong = styled.strong`
-  color: ${(p) => p.theme.textLight};
+  color: ${(p) => p.theme.text};
   font-size: 2rem;
 `;

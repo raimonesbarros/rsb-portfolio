@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Tag } from "..";
 import {
   Buttons,
-  Content,
   FullImage,
   Link,
   Subtitle,
@@ -22,25 +21,29 @@ const Viewer: FC<ViewerProps> = ({
 }) => (
   <ViewerContainer>
     <ViewerContent>
-      <FullImage src={image} alt={`Imagem do projeto ${title}`} priority />
-      <Content>
-        <Subtitle>{title}</Subtitle>
-        <Tags>
-          {tags.map((tag, i) => {
-            return <Tag key={i} content={tag} />;
-          })}
-        </Tags>
-        <Text>{fullDescription}</Text>
-      </Content>
+      <FullImage
+        src={image}
+        width={600}
+        height={400}
+        alt={`Imagem do projeto ${title}`}
+        priority
+      />
+      <Subtitle>{title}</Subtitle>
+      <Tags>
+        {tags.map((tag, i) => {
+          return <Tag key={i} content={tag} />;
+        })}
+      </Tags>
+      <Text>{fullDescription}</Text>
+      <Buttons>
+        <Link href={deploy} target="_blank" rel="noreferrer">
+          Ver mais
+        </Link>
+        <Link href={repository} target="_blank" rel="noreferrer">
+          Projeto
+        </Link>
+      </Buttons>
     </ViewerContent>
-    <Buttons>
-      <Link href={deploy} target="_blank" rel="noreferrer">
-        Ver mais
-      </Link>
-      <Link href={repository} target="_blank" rel="noreferrer">
-        Projeto
-      </Link>
-    </Buttons>
   </ViewerContainer>
 );
 
