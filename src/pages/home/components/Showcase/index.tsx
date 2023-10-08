@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { observer } from "~/modules";
 import { MainTitle } from "~/pages/styles";
 import { CaretDown, dummy } from "~/utils/assets";
 import {
@@ -10,14 +11,17 @@ import {
   Text,
 } from "./styles";
 
-const Showcase: FC = () => (
+type Props = {
+  $light?: boolean;
+};
+
+const Showcase: FC<Props> = ({ $light }) => (
   <ShowcaseSection id="showcase">
     <MainTitle>Portfólio de desenvolvimento front-end</MainTitle>
-    <ShowcaseContainer>
+    <ShowcaseContainer $light={$light}>
       <BgImage
         src={dummy}
         alt="Imagem de fundo: homem sentado de frente para uma tela de computador"
-        width={600}
         priority
       />
       <ShowcaseDescription>
@@ -39,4 +43,4 @@ const Showcase: FC = () => (
   </ShowcaseSection>
 );
 
-export default Showcase;
+export default observer(Showcase);
