@@ -1,11 +1,14 @@
 import { ReactMarkdown, styled } from "~/modules";
 
-export const PostContainer = styled.section`
+export const PostSection = styled.section`
+  background-color: ${(p) => p.theme.backgroundLight};
+`;
+
+export const PostContainer = styled.div`
   width: 100%;
   max-width: 864px;
   margin: 4.75rem auto 0;
-  padding: 0 0.5rem;
-  background-color: ${(p) => p.theme.background};
+  padding: 0.5rem;
 `;
 
 export const PostContent = styled.article`
@@ -19,12 +22,12 @@ export const PostContent = styled.article`
   gap: 0.75rem;
 
   line-height: 150%;
-  color: ${(props) => props.theme.text};
-  background-color: ${(p) => p.theme.background};
+  color: ${(props) => props.theme.textLight};
 
   img {
     width: 100%;
     max-height: 200px;
+    border-radius: 8px;
   }
 
   a {
@@ -42,5 +45,5 @@ export const PostContent = styled.article`
 `;
 
 export const Markdown = styled(ReactMarkdown)`
-  background-color: ${(p) => p.theme.background};
+  color: ${(props) => props.theme.textLight};
 `;
