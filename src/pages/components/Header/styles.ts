@@ -1,4 +1,5 @@
 import { styled } from "~/modules";
+import { LogoSvg } from "~/utils";
 
 interface NavbarProps {
   $state: boolean;
@@ -35,7 +36,7 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  background: ${(props) => props.theme.background};
+  background: ${(props) => props.theme.theme?.background};
 
   @media screen and (width <= 768px) {
     > a {
@@ -48,6 +49,10 @@ export const HeaderContent = styled.div`
       display: none;
     }
   }
+`;
+
+export const Logo = styled(LogoSvg)`
+  cursor: pointer;
 `;
 
 export const LinkTo = styled.a``;
@@ -81,6 +86,7 @@ export const Navbar = styled.nav<NavbarProps>`
 
     font-size: 1.2rem;
     padding: 0 0.5rem;
+    color: ${(p) => p.theme.textLight};
     border-bottom-right-radius: 8px;
 
     border: 2px solid transparent;
@@ -105,11 +111,11 @@ export const Navbar = styled.nav<NavbarProps>`
     flex-direction: column;
     padding: 1.2rem 0;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 3px ${(p) => p.theme.gray300};
+    box-shadow: 0 2px 3px ${(p) => p.theme.backgroundLight};
     background-image: linear-gradient(
       to bottom,
-      ${(p) => p.theme.background} 60%,
-      ${(p) => p.theme.gray100}
+      ${(p) => p.theme.background},
+      ${(p) => p.theme.backgroundLight}
     );
   }
 `;
@@ -121,14 +127,11 @@ export const Socials = styled.div`
 
   cursor: pointer;
 
-  a svg {
-    color: ${(p) => p.theme.text};
-  }
-
   @media screen and (width <= 768px) {
     margin-top: 0.5rem;
   }
 `;
+
 export const BtnMenu = styled.div`
   margin-top: 1rem;
   color: ${(p) => p.theme.primary};
@@ -136,4 +139,4 @@ export const BtnMenu = styled.div`
   cursor: pointer;
 `;
 
-export const Icon = styled.img``;
+export const Icon = styled.img.attrs({ width: 26 })``;

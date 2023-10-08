@@ -6,6 +6,7 @@ export const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${(p) => p.theme.background};
 `;
 
 export const AboutContainer = styled.div`
@@ -18,7 +19,8 @@ export const AboutContainer = styled.div`
   align-items: center;
   flex-grow: 1;
 
-  border-bottom: 1px solid ${(p) => p.theme.gray600};
+  border-bottom: 1px solid ${(p) => p.theme.border};
+  background-color: ${(p) => p.theme.background};
 
   img {
     position: absolute;
@@ -31,7 +33,7 @@ export const AboutContainer = styled.div`
 
   @media screen and (width < 768px) {
     img {
-      opacity: 0.7;
+      opacity: 0.5;
       width: 100%;
       max-width: 400px;
     }
@@ -40,7 +42,11 @@ export const AboutContainer = styled.div`
 
 export const BgImage = styled(NextImage).attrs({
   width: 400,
-})``;
+})`
+  @media screen and (width < 468px) {
+    width: 100%;
+  }
+`;
 
 export const AboutContent = styled.div`
   width: 100%;
@@ -85,4 +91,6 @@ export const Button = styled.button`
   }
 `;
 
-export const Strong = styled.strong``;
+export const Strong = styled.strong`
+  color: ${(p) => p.theme.textLight};
+`;
