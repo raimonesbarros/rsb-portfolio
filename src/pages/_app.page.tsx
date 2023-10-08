@@ -8,7 +8,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   const {
     themeStore: { mode },
   } = store;
-  const [theme, setTheme] = useState("" as Mode);
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     setTheme(mode);
