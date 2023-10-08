@@ -10,11 +10,12 @@ export const ProjectsListContainer = styled.div`
 
   @media screen and (width > 768px) {
     width: 80%;
-    max-height: calc(100vh - 10rem);
+    height: 100%;
+    max-height: calc(100vh - 92px);
   }
   @media screen and (width <= 768px) {
     width: 100%;
-    max-height: calc(100vh - 25rem);
+    max-height: calc(100vh - 534px);
     max-width: 600px;
     margin: auto;
   }

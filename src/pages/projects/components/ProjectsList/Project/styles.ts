@@ -27,7 +27,9 @@ export const Image = styled(NextImage)``;
 
 export const Subtitle = styled.h3``;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  text-align: center;
+`;
 
 export const ProjectInfo = styled.div`
   width: 100%;

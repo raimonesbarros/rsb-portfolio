@@ -1,5 +1,6 @@
+import { FC } from "react";
 import { Link, animateScroll, useRouter, useState } from "~/modules";
-import { List, LogoSvg, X } from "~/utils/assets";
+import { List, X } from "~/utils/assets";
 import { links } from "./nav-links";
 import {
   BtnMenu,
@@ -7,35 +8,33 @@ import {
   HeaderContent,
   Icon,
   LinkTo,
+  Logo,
   Navbar,
   Socials,
 } from "./styles";
 
-const Header = () => {
+const Header: FC = () => {
   const navigate = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  function navigateToPage(local: string) {
+  const navigateToPage = (local: string) => {
     setMenuIsOpen(false);
     navigate.push(local);
     animateScroll.scrollToTop();
-  }
+  };
 
-  function navigateTo(local: string) {
+  const navigateTo = (local: string) => {
     setMenuIsOpen(false);
     navigate.push(local);
-  }
+  };
 
   return (
     <HeaderContainer $state={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
       <HeaderContent onClick={(e) => e.stopPropagation()}>
-        <LinkTo
-          href="/"
-          onClick={() => navigateToPage("/")}
-          aria-label="Ir para o início"
-        >
-          <LogoSvg alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que" />
-        </LinkTo>
+        <Logo
+          alt="as letras R, S, e B cercadas pelos simbolos de menor que e barra maior que"
+          handleClick={() => navigateToPage("/")}
+        />
         <Navbar $state={menuIsOpen}>
           {links.map(({ href, to, content, label }) => {
             return (
@@ -48,6 +47,7 @@ const Header = () => {
                 duration={500}
                 onClick={() => navigateTo(`${href}`)}
                 aria-label={label}
+                tabIndex={0}
               >
                 {content}
               </Link>
@@ -64,7 +64,7 @@ const Header = () => {
                 src="https://icongr.am/devicon/linkedin-plain.svg?size=26&color=45c7af"
                 width={26}
                 alt="ícone do linkedin"
-                title="ícone do Linkedin"
+                title="Perfil no Linkedin"
               />
             </LinkTo>
             <LinkTo
@@ -77,7 +77,7 @@ const Header = () => {
                 src="https://icongr.am/fontawesome/github.svg?size=26&color=45c7af"
                 width={26}
                 alt="ícone do github"
-                title="ícone do Github"
+                title="Perfil no Github"
               />
             </LinkTo>
           </Socials>
