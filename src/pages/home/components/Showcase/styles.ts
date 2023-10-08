@@ -1,4 +1,8 @@
-import { NextImage, styled } from "~/modules";
+import { NextImage, css, styled } from "~/modules";
+
+type Props = {
+  $light?: boolean;
+};
 
 export const ShowcaseSection = styled.section`
   width: 100%;
@@ -9,9 +13,10 @@ export const ShowcaseSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${(p) => p.theme.backgroundLight};
 `;
 
-export const ShowcaseContainer = styled.div`
+export const ShowcaseContainer = styled.div<Props>`
   position: relative;
   width: 100%;
   max-width: 1120px;
@@ -19,7 +24,7 @@ export const ShowcaseContainer = styled.div`
 
   padding: 0 1rem;
 
-  border-bottom: 1px solid ${(p) => p.theme.gray600};
+  border-bottom: 1px solid ${(p) => p.theme.border};
 
   display: flex;
   align-items: center;
@@ -28,15 +33,16 @@ export const ShowcaseContainer = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
+    filter: ${(p) => p.$light && css`invert() grayscale() opacity(.6)`};
   }
 
   svg {
     @keyframes arrow {
       from {
-        bottom: 10%;
+        bottom: 5%;
       }
       to {
-        bottom: 17%;
+        bottom: 12%;
       }
     }
 
@@ -57,7 +63,7 @@ export const Text = styled.p`
   font-size: 1.5rem;
   font-weight: 100;
   font-family: "Roboto";
-  color: ${(p) => p.theme.gray600};
+  color: ${(p) => p.theme.text};
   white-space: nowrap;
   overflow: hidden;
 `;
@@ -78,10 +84,10 @@ export const ShowcaseDescription = styled.div`
   @keyframes writing {
     0% {
       width: 0;
-      border-right: 2px solid ${(p) => p.theme.gray600};
+      border-right: 2px solid ${(p) => p.theme.border};
     }
     100% {
-      border-right: 2px solid ${(p) => p.theme.gray600};
+      border-right: 2px solid ${(p) => p.theme.border};
     }
   }
 
@@ -129,6 +135,6 @@ export const ShowcaseDescription = styled.div`
 `;
 
 export const Strong = styled.strong`
-  color: ${(p) => p.theme.text};
+  color: ${(p) => p.theme.textLight};
   font-size: 2rem;
 `;

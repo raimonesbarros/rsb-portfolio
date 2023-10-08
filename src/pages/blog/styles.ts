@@ -1,5 +1,9 @@
 import { styled } from "~/modules";
 
+export const BlogSection = styled.section`
+  background-color: ${(p) => p.theme.backgroundLight};
+`;
+
 export const BlogContainer = styled.div`
   width: 100%;
   max-width: 54rem;
@@ -20,13 +24,13 @@ export const BlogInfo = styled.div`
 
   span {
     font-size: 0.875rem;
-    color: ${(p) => p.theme.gray800};
+    color: ${(p) => p.theme.text};
   }
 `;
 
 export const Span = styled.span`
   font-size: 0.875rem;
-  color: ${(p) => p.theme.gray800};
+  color: ${(p) => p.theme.text};
 `;
 
 export const Text = styled.p`
@@ -42,14 +46,14 @@ export const Input = styled.input`
   padding: 0.6rem 1rem;
   margin-top: 0.75rem;
 
-  border: 1px solid ${(p) => p.theme.gray800};
+  border: 1px solid ${(p) => p.theme.border};
   border-radius: 6px;
 
   color: ${(p) => p.theme.text};
-  background: ${(p) => p.theme.gray100};
+  background: ${(p) => p.theme.background}aa;
 
   &::placeholder {
-    color: ${(p) => p.theme.gray600};
+    color: ${(p) => p.theme.textLight};
   }
 
   &:hover {
@@ -79,7 +83,7 @@ export const PostContainer = styled.div`
 
     &:hover {
       border: 1px solid ${(p) => p.theme.primary};
-      filter: brightness(1.5);
+      filter: brightness(1.1);
     }
   }
 `;

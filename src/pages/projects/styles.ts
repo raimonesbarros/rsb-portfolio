@@ -9,6 +9,7 @@ export const ProjectsSection = styled.section`
 
   padding: 0 1rem;
   margin-top: 4.75rem;
+  background-color: ${(p) => p.theme.backgroundLight};
 `;
 
 export const ProjectsContainer = styled.div`
@@ -24,7 +25,6 @@ export const ProjectsContainer = styled.div`
 export const ProjectsContent = styled.div`
   width: 100%;
   height: 100%;
-  padding: 1rem 0;
 
   display: flex;
   justify-content: space-between;

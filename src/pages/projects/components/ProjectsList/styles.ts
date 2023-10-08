@@ -7,13 +7,14 @@ export const ProjectsListContainer = styled.div`
   padding-bottom: 20px;
 
   overflow: auto;
-  border-bottom: 2px solid ${(p) => p.theme.gray600};
+  border-bottom: 2px solid ${(p) => p.theme.border};
 
   @media screen and (width > 768px) {
     width: 80%;
     height: 100%;
-    max-height: calc(100vh - 92px);
+    max-height: calc(100vh - 76px);
   }
+
   @media screen and (width <= 768px) {
     width: 100%;
     max-height: calc(100vh - 480px);

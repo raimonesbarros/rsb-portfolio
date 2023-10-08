@@ -1,8 +1,13 @@
 export const defaultTheme = {
   primary: "#45C7AF",
 
-  text: "#E5E5D6",
-  background: "#000000",
+  text: "#AFC2D4",
+  textLight: "#C4D4E3",
+
+  background: "#0C1C2C",
+  backgroundLight: "#071422",
+  border: "#333333",
+
   shade: "#000000BB",
   gray100: "#111111",
   gray200: "#222222",

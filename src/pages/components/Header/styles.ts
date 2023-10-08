@@ -83,7 +83,7 @@ export const Navbar = styled.nav<NavbarProps>`
   a:not(:has(img)) {
     display: flex;
     line-height: 140%;
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
 
     font-size: 1.2rem;
     padding: 0 0.5rem;
@@ -91,6 +91,7 @@ export const Navbar = styled.nav<NavbarProps>`
 
     border: 2px solid transparent;
     border-right: 2px solid transparent;
+    color: ${(p) => p.theme.textLight};
 
     &:hover {
       border-bottom: 2px solid ${(p) => p.theme.primary};
@@ -112,11 +113,11 @@ export const Navbar = styled.nav<NavbarProps>`
     flex-direction: column;
     padding: 1.2rem 0;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 3px ${(p) => p.theme.gray300};
+    box-shadow: 0 2px 3px ${(p) => p.theme.backgroundLight};
     background-image: linear-gradient(
       to bottom,
-      ${(p) => p.theme.background} 60%,
-      ${(p) => p.theme.gray100}
+      ${(p) => p.theme.background},
+      ${(p) => p.theme.backgroundLight}
     );
   }
 `;
@@ -125,6 +126,7 @@ export const Socials = styled.div`
   align-items: center;
   gap: 0.5rem;
   line-height: 100%;
+  margin-top: 0.3rem;
 
   cursor: pointer;
 
@@ -145,4 +147,4 @@ export const BtnMenu = styled.button`
   cursor: pointer;
 `;
 
-export const Icon = styled.img``;
+export const Icon = styled.img.attrs({ width: 26 })``;

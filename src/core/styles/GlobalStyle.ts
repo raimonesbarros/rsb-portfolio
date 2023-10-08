@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+type Props = {
+  theme: Theme;
+};
+
+export const GlobalStyle = createGlobalStyle<Props>`
   * {
     margin: 0;
     padding: 0;
@@ -8,8 +12,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    background: ${(p) => p.theme.background};
-
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
