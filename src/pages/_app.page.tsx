@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { GlobalStyle } from "~/core";
-import { Provider, observer } from "~/modules";
+import { GlobalStyle, defaultTheme } from "~/core";
+import { Provider, ThemeProvider, observer } from "~/modules";
 import store from "../core/store";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
@@ -20,8 +20,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="author" content="Raimones Barros" />
       </Head>
       <Provider rootStore={store}>
-        <Component {...pageProps} />
-        <GlobalStyle />
+        <ThemeProvider theme={defaultTheme}>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </ThemeProvider>
       </Provider>
     </>
   );
