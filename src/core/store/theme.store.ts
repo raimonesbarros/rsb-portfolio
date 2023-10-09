@@ -2,7 +2,7 @@ import { makeAutoObservable, makePersistable } from "~/modules";
 import { defaultTheme, lightTheme } from "..";
 
 export default class ThemeStore {
-  mode: Mode = "light" as Mode;
+  mode: Mode = "light";
 
   theme: Theme = lightTheme;
 
