@@ -33,7 +33,7 @@ export const ShowcaseContainer = styled.div<Props>`
     position: absolute;
     right: 0;
     bottom: 0;
-    filter: ${(p) => p.$light && css`invert() grayscale() opacity(.6)`};
+    /* filter: ${(p) => p.$light && css`invert() grayscale() opacity(.6)`}; */
   }
 
   svg {
