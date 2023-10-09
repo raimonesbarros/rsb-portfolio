@@ -1,20 +1,11 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { GlobalStyle, defaultTheme, lightTheme } from "~/core";
-import { Provider, ThemeProvider, observer } from "~/modules";
+import { GlobalStyle } from "~/core";
+import { Provider, observer } from "~/modules";
 import store from "../core/store";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
-  const {
-    themeStore: { mode },
-  } = store;
-  const [theme, setTheme] = useState<Mode>();
-
-  useEffect(() => {
-    setTheme(mode);
-  }, [mode]);
-
   return (
     <>
       <Head>
@@ -29,14 +20,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="author" content="Raimones Barros" />
       </Head>
       <Provider rootStore={store}>
-        <ThemeProvider theme={mode === "light" ? lightTheme : defaultTheme}>
-          {theme && (
-            <>
-              <Component {...pageProps} />
-              <GlobalStyle />
-            </>
-          )}
-        </ThemeProvider>
+        <Component {...pageProps} />
+        <GlobalStyle />
       </Provider>
     </>
   );
