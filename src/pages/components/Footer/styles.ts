@@ -8,6 +8,8 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   line-height: 1;
+
+  background-color: ${(p) => p.theme.background};
 `;
 
 export const FooterContent = styled.div`
@@ -20,11 +22,11 @@ export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background: ${(p) => p.theme.background};
 `;
 
-export const Strong = styled.strong``;
+export const Strong = styled.strong`
+  color: ${(p) => p.theme.textLight};
+`;
 
 export const Span = styled.span``;
 

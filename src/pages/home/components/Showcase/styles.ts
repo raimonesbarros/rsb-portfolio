@@ -19,7 +19,7 @@ export const ShowcaseContainer = styled.div`
 
   padding: 0 1rem;
 
-  border-bottom: 1px solid ${(p) => p.theme.gray600};
+  border-bottom: 1px solid ${(p) => p.theme.border};
 
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ export const Text = styled.p`
   font-size: 1.5rem;
   font-weight: 100;
   font-family: "Roboto";
-  color: ${(p) => p.theme.gray600};
+  color: ${(p) => p.theme.text};
   white-space: nowrap;
   overflow: hidden;
 `;
@@ -78,10 +78,10 @@ export const ShowcaseDescription = styled.div`
   @keyframes writing {
     0% {
       width: 0;
-      border-right: 2px solid ${(p) => p.theme.gray600};
+      border-right: 2px solid ${(p) => p.theme.border};
     }
     100% {
-      border-right: 2px solid ${(p) => p.theme.gray600};
+      border-right: 2px solid ${(p) => p.theme.border};
     }
   }
 
@@ -95,7 +95,7 @@ export const ShowcaseDescription = styled.div`
   }
 
   padding-left: 20%;
-  transform: translatey(-2.35rem);
+  transform: translateY(-2.35rem);
 
   p:nth-child(even) {
     margin-bottom: 0.5rem;
@@ -116,7 +116,7 @@ export const ShowcaseDescription = styled.div`
   }
   p:nth-child(6) {
     width: 9.6rem;
-    border-right: 2px solid ${(p) => p.theme.text};
+    border-right: 2px solid ${(p) => p.theme.border};
     animation:
       appear 3.3s normal,
       cursors 0.7s infinite normal,
@@ -129,6 +129,6 @@ export const ShowcaseDescription = styled.div`
 `;
 
 export const Strong = styled.strong`
-  color: ${(p) => p.theme.text};
+  color: ${(p) => p.theme.textLight};
   font-size: 2rem;
 `;

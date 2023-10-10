@@ -97,7 +97,7 @@ export const Buttons = styled.div`
     background: ${(p) => p.theme.background};
 
     &:hover {
-      background: ${(p) => p.theme.gray300};
+      background: ${(p) => p.theme.backgroundLight};
     }
   }
 `;

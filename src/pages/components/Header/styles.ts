@@ -87,6 +87,7 @@ export const Navbar = styled.nav<NavbarProps>`
 
     font-size: 1.2rem;
     padding: 0 0.5rem;
+    color: ${(p) => p.theme.textLight};
     border-bottom-right-radius: 8px;
 
     border: 2px solid transparent;
@@ -112,11 +113,11 @@ export const Navbar = styled.nav<NavbarProps>`
     flex-direction: column;
     padding: 1.2rem 0;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 3px ${(p) => p.theme.gray300};
+    box-shadow: 0 2px 3px ${(p) => p.theme.backgroundLight};
     background-image: linear-gradient(
       to bottom,
       ${(p) => p.theme.background} 60%,
-      ${(p) => p.theme.gray100}
+      ${(p) => p.theme.backgroundLight}
     );
   }
 `;
@@ -145,4 +146,4 @@ export const BtnMenu = styled.button`
   cursor: pointer;
 `;
 
-export const Icon = styled.img``;
+export const Icon = styled.img.attrs({ width: 26 })``;

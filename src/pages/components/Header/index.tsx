@@ -62,7 +62,6 @@ const Header: FC = () => {
             >
               <Icon
                 src="https://icongr.am/devicon/linkedin-plain.svg?size=26&color=45c7af"
-                width={26}
                 alt="ícone do linkedin"
                 title="Perfil no Linkedin"
               />
@@ -75,7 +74,6 @@ const Header: FC = () => {
             >
               <Icon
                 src="https://icongr.am/fontawesome/github.svg?size=26&color=45c7af"
-                width={26}
                 alt="ícone do github"
                 title="Perfil no Github"
               />

@@ -38,7 +38,7 @@ const Viewer: FC<ViewerProps> = ({
         Ver mais
       </Link>
       <Link href={repository} target="_blank" rel="noreferrer">
-        Projeto
+        Código
       </Link>
     </Buttons>
   </ViewerContainer>
