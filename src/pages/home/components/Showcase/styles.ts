@@ -9,6 +9,7 @@ export const ShowcaseSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${(p) => p.theme.backgroundLight};
 `;
 
 export const ShowcaseContainer = styled.div`
