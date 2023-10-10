@@ -15,8 +15,8 @@ export default class ThemeStore {
   }
 
   getLocalTheme = async () => {
-    if (this.mode === "dark") {
-      this.theme = defaultTheme;
+    if (this.mode === "light") {
+      this.theme = lightTheme;
     } else {
       this.mode = "dark";
       this.theme = defaultTheme;
