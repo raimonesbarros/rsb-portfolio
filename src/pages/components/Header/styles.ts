@@ -114,11 +114,7 @@ export const Navbar = styled.nav<NavbarProps>`
     padding: 1.2rem 0;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 3px ${(p) => p.theme.backgroundLight};
-    background-image: linear-gradient(
-      to bottom,
-      ${(p) => p.theme.background} 60%,
-      ${(p) => p.theme.backgroundLight}
-    );
+    background-color: ${(p) => p.theme.background};
   }
 `;
 export const Socials = styled.div`

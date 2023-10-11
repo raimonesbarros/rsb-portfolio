@@ -1,5 +1,6 @@
-import { FC } from "react";
-import { Link, animateScroll, useRouter, useState } from "~/modules";
+import { FC, useEffect } from "react";
+import { Link, animateScroll, observer, useRouter, useState } from "~/modules";
+import { useStores } from "~/utils";
 import { List, X } from "~/utils/assets";
 import { links } from "./nav-links";
 import {
@@ -16,6 +17,10 @@ import {
 const Header: FC = () => {
   const navigate = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [themeIcon, setThemeIcon] = useState<Mode>();
+  const {
+    themeStore: { mode, setTheme },
+  } = useStores();
 
   const navigateToPage = (local: string) => {
     setMenuIsOpen(false);
@@ -27,6 +32,10 @@ const Header: FC = () => {
     setMenuIsOpen(false);
     navigate.push(local);
   };
+
+  useEffect(() => {
+    setThemeIcon(mode);
+  }, [mode]);
 
   return (
     <HeaderContainer $state={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
@@ -78,6 +87,21 @@ const Header: FC = () => {
                 title="Perfil no Github"
               />
             </LinkTo>
+            {themeIcon === "light" ? (
+              <Icon
+                src="https://icongr.am/feather/moon.svg?size=30&color=333333"
+                alt="ícone de lua"
+                title="Modo escuro"
+                onClick={setTheme}
+              />
+            ) : (
+              <Icon
+                src="https://icongr.am/feather/sun.svg?size=30&color=e4e4d5"
+                alt="ícone de sol"
+                title="Modo claro"
+                onClick={setTheme}
+              />
+            )}
           </Socials>
         </Navbar>
         <BtnMenu>
@@ -92,4 +116,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default observer(Header);
