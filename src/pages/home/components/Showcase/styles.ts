@@ -1,4 +1,10 @@
 import { NextImage, styled } from "~/modules";
+import { CaretDown } from "~/utils";
+
+type Props = {
+  $light?: boolean;
+  top: boolean;
+};
 
 export const ShowcaseSection = styled.section`
   width: 100%;
@@ -12,7 +18,7 @@ export const ShowcaseSection = styled.section`
   background-color: ${(p) => p.theme.backgroundLight};
 `;
 
-export const ShowcaseContainer = styled.div`
+export const ShowcaseContainer = styled.div<Props>`
   position: relative;
   width: 100%;
   max-width: 1120px;
@@ -29,15 +35,16 @@ export const ShowcaseContainer = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
+    filter: ${(p) => p.$light && `invert() opacity(.7) grayscale(2)`};
   }
 
   svg {
     @keyframes arrow {
       from {
-        bottom: 10%;
+        bottom: 5%;
       }
       to {
-        bottom: 17%;
+        bottom: 12%;
       }
     }
 
@@ -48,6 +55,7 @@ export const ShowcaseContainer = styled.div`
     transform: translateX(-50%);
     animation: arrow 0.6s 4.5s alternate infinite;
     color: ${(p) => p.theme.primary};
+    opacity: ${(p) => (p.top ? "1" : "0")};
   }
 `;
 
@@ -128,6 +136,8 @@ export const ShowcaseDescription = styled.div`
     padding-left: 10%;
   }
 `;
+
+export const ToDown = styled(CaretDown).attrs({ size: 40 })``;
 
 export const Strong = styled.strong`
   color: ${(p) => p.theme.textLight};
