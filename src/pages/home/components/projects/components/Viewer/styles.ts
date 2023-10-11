@@ -12,11 +12,6 @@ export const ViewerContainer = styled.div`
 
   @media screen and (width > 768px) {
     max-height: calc(100vh - 108px);
-    max-width: 600px;
-
-    img {
-      max-height: 300px;
-    }
   }
 
   @media screen and (width <= 768px) {
@@ -67,6 +62,10 @@ export const FullImage = styled(NextImage).attrs({ width: 600, height: 350 })`
   width: 100%;
   height: 100%;
   border-radius: 8px;
+
+  @media screen and (width > 768px) {
+    max-height: 300px;
+  }
 `;
 
 export const Tags = styled.div``;
