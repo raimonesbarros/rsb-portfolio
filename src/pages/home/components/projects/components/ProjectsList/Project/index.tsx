@@ -9,13 +9,7 @@ const Project: FC<ProjectProps> = ({
   changeCurrentProject,
 }) => (
   <ProjectContainer onClick={() => changeCurrentProject(position)} tabIndex={0}>
-    <Image
-      src={image}
-      alt={`página inicial do projeto ${title}`}
-      width={160}
-      height={90}
-      priority
-    />
+    <Image src={image} alt={`página inicial do projeto ${title}`} priority />
     <ProjectInfo>
       <Subtitle>{title}</Subtitle>
       <Text>{smallDescription}</Text>

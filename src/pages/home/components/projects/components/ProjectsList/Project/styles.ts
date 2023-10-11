@@ -16,15 +16,13 @@ export const ProjectContainer = styled.div`
   }
 
   cursor: pointer;
-
-  img {
-    width: 10rem;
-    height: 100%;
-    border-radius: 4px;
-  }
 `;
 
-export const Image = styled(NextImage)``;
+export const Image = styled(NextImage).attrs({ width: 160, height: 90 })`
+  width: 10rem;
+  height: 100%;
+  border-radius: 4px;
+`;
 
 export const Subtitle = styled.h3`
   text-align: center;
