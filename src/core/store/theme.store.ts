@@ -1,4 +1,4 @@
-import { makeAutoObservable, makePersistable } from "~/modules";
+import { makeAutoObservable, makePersistable, runInAction } from "~/modules";
 import { defaultTheme, lightTheme } from "..";
 
 export default class ThemeStore {
@@ -15,12 +15,14 @@ export default class ThemeStore {
   }
 
   setTheme = () => {
-    if (this.mode === "dark") {
-      this.mode = "light";
-      this.theme = lightTheme;
-    } else {
-      this.mode = "dark";
-      this.theme = defaultTheme;
-    }
+    runInAction(() => {
+      if (this.mode === "dark") {
+        this.mode = "light";
+        this.theme = lightTheme;
+      } else {
+        this.mode = "dark";
+        this.theme = defaultTheme;
+      }
+    });
   };
 }

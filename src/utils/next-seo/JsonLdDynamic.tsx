@@ -5,7 +5,7 @@ interface JsonLdProps {
   data: Record<string, any>;
 }
 
-const JsonLdDinamic: React.FC<JsonLdProps> = ({ data }) => {
+const JsonLdDynamic: React.FC<JsonLdProps> = ({ data }) => {
   return (
     <script
       type="application/ld+json"
@@ -16,4 +16,4 @@ const JsonLdDinamic: React.FC<JsonLdProps> = ({ data }) => {
   );
 };
 
-export default JsonLdDinamic;
+export default JsonLdDynamic;

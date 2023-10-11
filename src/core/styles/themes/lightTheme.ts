@@ -6,7 +6,7 @@ export const lightTheme = {
 
   background: "#EEEEEE",
   backgroundLight: "#D4D4D4",
-  border: "#DDDDDD",
+  border: "#CCCCCC",
 
   shade: "#C4D4E388",
   gray100: "#111111",

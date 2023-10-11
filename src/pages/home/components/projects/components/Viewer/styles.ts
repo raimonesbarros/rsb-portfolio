@@ -1,5 +1,9 @@
 import { NextImage, styled } from "~/modules";
 
+type Props = {
+  isVisible: boolean;
+};
+
 export const ViewerContainer = styled.div`
   width: 100%;
 
@@ -11,7 +15,7 @@ export const ViewerContainer = styled.div`
   }
 
   @media screen and (width <= 768px) {
-    min-height: 350px;
+    min-height: 380px;
     max-height: 50vh;
   }
 `;
@@ -31,17 +35,22 @@ export const ViewerContent = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<Props>`
   display: flex;
   flex-direction: column;
   align-items: center;
   @media screen and (width <= 768px) {
     position: absolute;
     bottom: 0;
-    background-color: ${(p) => p.theme.background}e8;
+    background-color: ${(p) => p.theme.background}f0;
     padding: 1rem;
     border-radius: 8px;
     z-index: 1;
+  }
+
+  @media screen and (width <= 768px) {
+    opacity: ${(p) => (p.isVisible ? "1" : "0")};
+    cursor: pointer;
   }
 `;
 
@@ -83,7 +92,7 @@ export const Buttons = styled.div`
 
   a:nth-child(1) {
     background: ${(p) => p.theme.primary};
-    border: 2px solid ${(p) => p.theme.background};
+    border: 2px solid ${(p) => p.theme.backgroundLight};
     color: ${(p) => p.theme.background};
 
     &:hover {
@@ -94,10 +103,10 @@ export const Buttons = styled.div`
   a:nth-child(2) {
     border: 2px solid ${(p) => p.theme.primary};
     color: ${(p) => p.theme.primary};
-    background: ${(p) => p.theme.background};
+    background: ${(p) => p.theme.backgroundLight};
 
     &:hover {
-      background: ${(p) => p.theme.backgroundLight};
+      background: ${(p) => p.theme.background};
     }
   }
 `;

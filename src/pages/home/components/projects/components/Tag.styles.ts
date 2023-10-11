@@ -18,7 +18,9 @@ export const TagContent = styled.span<TagContentProps>`
   background-color: ${(props) => props.$variant === "ReactJS" && "#49D4FD"};
   color: ${(props) => props.$variant === "ReactJS" && "#000000"};
   background-color: ${(props) => props.$variant === "TypeScript" && "#0064B6"};
+  color: ${(props) => props.$variant === "TypeScript" && "#ffffff"};
   background-color: ${(props) => props.$variant === "+ libs" && "#000000"};
   border: 1px solid
-    ${(props) => (props.$variant === "+libs" ? "#ffffff" : "transparent")};
+    ${(props) =>
+      props.$variant === "+libs" ? props.theme.text : "transparent"};
 `;

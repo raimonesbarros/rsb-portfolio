@@ -20,6 +20,7 @@ export const ProjectContainer = styled.div`
   img {
     width: 10rem;
     height: 100%;
+    border-radius: 4px;
   }
 `;
 

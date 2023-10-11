@@ -1,21 +1,44 @@
-import { FC } from "react";
-import { NextSeo } from "~/modules";
-import { SEOMain } from "~/utils";
+import { FC, useEffect } from "react";
+import { NextSeo, observer } from "~/modules";
+import { SEOMain, useStores } from "~/utils";
 import { BackToTop, Footer, Header } from "../components";
 import { About, Contact, Showcase, Skills } from "./components";
+import Projects from "./components/projects";
 import { HomeContainer } from "./styles";
 
-const Home: FC = () => (
-  <HomeContainer>
-    <NextSeo {...SEOMain} />
-    <Header />
-    <Showcase />
-    <Skills />
-    <About />
-    <Contact />
-    <Footer />
-    <BackToTop />
-  </HomeContainer>
-);
+const Home: FC = () => {
+  const {
+    firestoreProvider: {
+      fetchClientProvider,
+      currentProjectId,
+      changeCurrentProject,
+      projectsData,
+    },
+  } = useStores();
 
-export default Home;
+  useEffect(() => {
+    fetchClientProvider();
+  }, []);
+
+  return (
+    <HomeContainer>
+      <NextSeo {...SEOMain} />
+      <Header />
+      <Showcase />
+      <Skills />
+      {projectsData[0] && (
+        <Projects
+          projectsData={projectsData}
+          changeCurrentProject={changeCurrentProject}
+          currentProjectId={currentProjectId}
+        />
+      )}
+      <About />
+      <Contact />
+      <Footer />
+      <BackToTop />
+    </HomeContainer>
+  );
+};
+
+export default observer(Home);

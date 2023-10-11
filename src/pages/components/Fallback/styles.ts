@@ -1,13 +1,10 @@
-import { styled } from "~/modules";
+import { keyframes, styled } from "~/modules";
+
+const fallbackAnimation = keyframes({
+  "50%": { width: "40px", height: "25px" },
+});
 
 export const FallbackContainer = styled.div`
-  @keyframes fallbackAnimation {
-    50% {
-      width: 40px;
-      height: 25px;
-    }
-  }
-
   width: 100%;
   height: 100vh;
   display: flex;
@@ -16,6 +13,6 @@ export const FallbackContainer = styled.div`
 
   img {
     height: "auto";
-    animation: fallbackAnimation 1s ease-in-out infinite;
+    animation: ${fallbackAnimation} 1s ease-in-out infinite;
   }
 `;

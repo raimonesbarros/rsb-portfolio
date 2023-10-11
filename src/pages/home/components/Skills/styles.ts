@@ -128,4 +128,5 @@ export const Icon = styled.img``;
 
 export const Strong = styled.strong`
   color: ${(p) => p.theme.textLight};
+  text-align: center;
 `;
