@@ -1,9 +1,14 @@
-import { styled } from "~/modules";
+import { keyframes, styled } from "~/modules";
 import { LogoSvg } from "~/utils";
 
-interface NavbarProps {
-  $state: boolean;
-}
+const appearMenu = keyframes({
+  "0%": { opacity: 0, marginTop: "-1rem" },
+  "100%": { opacity: 1 },
+});
+
+type NavbarProps = {
+  $state?: boolean;
+};
 
 export const HeaderContainer = styled.header<NavbarProps>`
   position: fixed;
@@ -58,17 +63,7 @@ export const Logo = styled(LogoSvg)`
 `;
 
 export const Navbar = styled.nav<NavbarProps>`
-  @keyframes appearMenu {
-    from {
-      opacity: 0;
-      margin-top: -1rem;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  animation: appearMenu 0.5s normal;
+  animation: ${appearMenu} 0.5s normal;
   display: flex;
   align-items: center;
   gap: 0.5rem;

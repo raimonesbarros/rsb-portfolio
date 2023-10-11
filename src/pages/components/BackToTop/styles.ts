@@ -1,5 +1,4 @@
-import { css, keyframes } from "styled-components";
-import { styled } from "~/modules";
+import { css, keyframes, styled } from "~/modules";
 
 interface Props {
   $scroll: number;
@@ -25,7 +24,7 @@ export const IconContainer = styled.div<Props>`
   animation: ${(p) =>
     p.$scroll <= 200 &&
     css`
-      ${appear} 500ms forwards ease-in-out
+      ${appear} 400ms forwards ease-in-out
     `};
   z-index: 1;
 

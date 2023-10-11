@@ -6,6 +6,7 @@ type Props = {
   bold: string;
   reverse?: boolean;
 };
+
 const Subtitle: FC<Props> = ({ bold, normal, reverse }) => (
   <Title>
     {reverse ? (

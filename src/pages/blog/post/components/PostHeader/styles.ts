@@ -2,7 +2,7 @@ import { NextLink, styled } from "~/modules";
 
 export const PostHeaderContainer = styled.div`
   background: ${(p) => p.theme.backgroundLight};
-  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 
   padding: 1rem;

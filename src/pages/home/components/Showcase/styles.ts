@@ -3,7 +3,7 @@ import { CaretDown } from "~/utils";
 
 type Props = {
   $light?: boolean;
-  top: boolean;
+  $top: boolean;
 };
 
 export const ShowcaseSection = styled.section`
@@ -55,7 +55,7 @@ export const ShowcaseContainer = styled.div<Props>`
     transform: translateX(-50%);
     animation: arrow 0.6s 4.5s alternate infinite;
     color: ${(p) => p.theme.primary};
-    opacity: ${(p) => (p.top ? "1" : "0")};
+    opacity: ${(p) => (p.$top ? "1" : "0")};
   }
 `;
 

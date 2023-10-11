@@ -7,7 +7,7 @@ import {
   GithubSvg,
   LinkSvg,
 } from "~/utils/assets";
-import SEODinamic from "~/utils/next-seo/Dinamic";
+import SEODynamic from "~/utils/next-seo/Dynamic";
 import {
   Link,
   PostHeaderContainer,
@@ -20,7 +20,7 @@ import {
 
 const PostHeader: FC<PostHeaderProps> = ({ post }) => (
   <PostHeaderContainer>
-    <SEODinamic description={post.title} postId={post.html_url.slice(-1)} />
+    <SEODynamic description={post.title} postId={post.html_url.slice(-1)} />
     <PostHeaderLinks>
       <Link href="/blog">
         <BackSvg />

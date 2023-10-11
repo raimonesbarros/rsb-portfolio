@@ -1,47 +1,46 @@
 import { FC } from "react";
-import { Code, Devices, HandTap, Layout } from "~/utils";
 import { Card, CardsContainer, Heading, Strong, Text } from "./styles";
 
 const Cards: FC = () => (
   <CardsContainer>
     <Card>
       <Heading>
-        <Code size={32} />
-        <Strong>Código semântico</Strong>
+        <Strong>Comunicação</Strong>
       </Heading>
       <Text>
-        Estrutura descritiva clara e objetiva para facilitar a leitura e
-        interpretação, especialmente de motores de busca
+        Possuo a capacidade de me comunicar efetivamente, tanto verbalmente
+        quanto por escrito. Isso inclui falar em público e transmitir
+        informações de maneira clara.
       </Text>
     </Card>
     <Card>
       <Heading>
-        <Devices size={32} />
-        <Strong>Responsividade</Strong>
+        <Strong>Trabalho em Equipe</Strong>
       </Heading>
       <Text>
-        Estilos preparados para se adaptar aos diferentes softwares e
-        dispositivos
+        Sou capaz de trabalhar bem em colaboração com equipes, contribuir com
+        ideias e sugestões, ouvir os outros, resolver conflitos de comunicação e
+        buscar alcançar objetivos coletivos.
       </Text>
     </Card>
     <Card>
       <Heading>
-        <Layout size={32} />
-        <Strong>Design atrativo</Strong>
+        <Strong>Resolução de Problemas</Strong>
       </Heading>
       <Text>
-        Criação visual utilizando técnicas de design como psicologia das cores,
-        tipografia, hierarquia e etc...
+        Tenho uma boa capacidade de identificar, analisar e resolver problemas.
+        Sou criativo na busca de soluções, tomar decisões e ser proativo na
+        resolução de desafios.
       </Text>
     </Card>
     <Card>
       <Heading>
-        <HandTap size={32} />
-        <Strong>Dinamicidade</Strong>
+        <Strong>Adaptabilidade</Strong>
       </Heading>
       <Text>
-        Uso de métodos dinâmicos e de interatividade com o usuário para garantir
-        a melhor experiência
+        Sou capaz de me adaptar a mudanças, aprender rapidamente e lidar com
+        situações imprevisíveis. Por ser flexível posso me ajustar a novos
+        ambientes e tarefas com facilidade.
       </Text>
     </Card>
   </CardsContainer>

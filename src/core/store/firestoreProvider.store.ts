@@ -1,6 +1,5 @@
-import { getProjects } from "~/infra";
-import FirestoreService from "~/infra/service/firestore/firestore.service";
-import { makeAutoObservable, makePersistable } from "~/modules";
+import { FirestoreService, getProjects } from "~/infra";
+import { makeAutoObservable, makePersistable, runInAction } from "~/modules";
 import { RootStore } from ".";
 
 export default class FireStoreProvider {
@@ -29,13 +28,16 @@ export default class FireStoreProvider {
     const projectsPath = firestoreData.filePath;
 
     const projects = await getProjects(projectsPath);
-
-    this.projectsData = projects.projects;
+    runInAction(() => {
+      this.projectsData = projects.projects;
+    });
 
     return this.projectsData;
   };
 
   changeCurrentProject = (index: number) => {
-    this.currentProjectId = index;
+    runInAction(() => {
+      this.currentProjectId = index;
+    });
   };
 }
