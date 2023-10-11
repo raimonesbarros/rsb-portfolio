@@ -50,10 +50,10 @@ export const Input = styled.input`
   border-radius: 6px;
 
   color: ${(p) => p.theme.text};
-  background: ${(p) => p.theme.background}aa;
+  background: ${(p) => p.theme.background};
 
   &::placeholder {
-    color: ${(p) => p.theme.textLight};
+    color: ${(p) => p.theme.gray800};
   }
 
   &:hover {
@@ -72,7 +72,7 @@ export const Button = styled.button`
 export const PostContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;
@@ -85,9 +85,5 @@ export const PostContainer = styled.div`
       border: 1px solid ${(p) => p.theme.primary};
       filter: brightness(1.1);
     }
-  }
-
-  @media screen and (width <= 843px) {
-    justify-content: center;
   }
 `;

@@ -31,7 +31,7 @@ export const AboutContainer = styled.div`
     z-index: 0;
   }
 
-  @media screen and (width < 768px) {
+  @media screen and (width < 650px) {
     img {
       opacity: 0.5;
       width: 100%;
@@ -58,7 +58,7 @@ export const AboutContent = styled.div`
 `;
 
 export const Text = styled.p`
-  max-width: 500px;
+  max-width: 400px;
   padding-top: 2rem;
 
   font-size: 1.25rem;

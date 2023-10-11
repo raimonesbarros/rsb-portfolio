@@ -2,13 +2,12 @@ import { styled } from "~/modules";
 
 export const ProjectsSection = styled.section`
   width: 100%;
-  min-height: calc(100vh - 4.75rem);
+  height: calc(100vh - 4.75rem);
 
   display: flex;
   justify-content: center;
 
   padding: 0 1rem;
-  margin-top: 4.75rem;
 
   background-color: ${(p) => p.theme.backgroundLight};
 `;

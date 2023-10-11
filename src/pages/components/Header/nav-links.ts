@@ -6,8 +6,8 @@ export const links = [
     label: "ir para o inicio",
   },
   {
-    href: "/projects",
-    to: "/",
+    href: "/#projects",
+    to: "projects",
     content: "PROJETOS",
     label: "ir para projetos",
   },

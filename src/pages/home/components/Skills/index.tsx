@@ -11,7 +11,7 @@ const Skills: FC = () => (
       <Cards />
     </SkillsContainer>
     <TechsContent>
-      <Subtitle bold="Tecnologias" normal="que utilizo" />
+      <Subtitle bold="Tecnologias" normal="principais" reverse />
       <HardSkills />
     </TechsContent>
   </SkillsSection>

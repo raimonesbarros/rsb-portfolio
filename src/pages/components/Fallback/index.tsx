@@ -5,7 +5,7 @@ import favicon from "public/favicon.png";
 
 const HandleFallback: FC = () => (
   <FallbackContainer>
-    <NextImage src={favicon} width={30} alt="carregnado página" priority />
+    <NextImage src={favicon} width={30} alt="carregando página" priority />
   </FallbackContainer>
 );
 
