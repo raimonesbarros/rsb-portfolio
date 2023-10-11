@@ -12,6 +12,11 @@ export const ViewerContainer = styled.div`
 
   @media screen and (width > 768px) {
     max-height: calc(100vh - 108px);
+    max-width: 600px;
+
+    img {
+      max-height: 300px;
+    }
   }
 
   @media screen and (width <= 768px) {
