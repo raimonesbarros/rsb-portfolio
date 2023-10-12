@@ -27,7 +27,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="author" content="Raimones Barros" />
       </Head>
       <Provider rootStore={store}>
-        <ThemeProvider theme={theme === "dark" ? defaultTheme : lightTheme}>
+        <ThemeProvider theme={theme === "light" ? lightTheme : defaultTheme}>
           <GlobalStyle />
           <Component {...pageProps} />
         </ThemeProvider>
