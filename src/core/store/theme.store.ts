@@ -2,9 +2,9 @@ import { makeAutoObservable, makePersistable, runInAction } from "~/modules";
 import { defaultTheme, lightTheme } from "..";
 
 export default class ThemeStore {
-  mode: Mode = "dark" as Mode;
+  mode: Mode = "" as Mode;
 
-  theme: Theme = defaultTheme as Theme;
+  theme: Theme = {} as Theme;
 
   constructor() {
     makeAutoObservable(this);
