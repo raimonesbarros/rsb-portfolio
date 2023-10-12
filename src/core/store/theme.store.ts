@@ -16,12 +16,12 @@ export default class ThemeStore {
 
   setTheme = () => {
     runInAction(() => {
-      if (this.mode === "dark") {
-        this.mode = "light";
-        this.theme = lightTheme;
-      } else {
+      if (this.mode === "light") {
         this.mode = "dark";
         this.theme = defaultTheme;
+      } else {
+        this.mode = "light";
+        this.theme = lightTheme;
       }
     });
   };
