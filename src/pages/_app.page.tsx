@@ -5,7 +5,7 @@ import { GlobalStyle, defaultTheme, lightTheme, store } from "~/core";
 import { Provider, ThemeProvider, observer } from "~/modules";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
-  const [theme, setTheme] = useState<Mode>();
+  const [theme, setTheme] = useState<Mode>("dark");
   const {
     themeStore: { mode },
   } = store;
@@ -27,7 +27,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="author" content="Raimones Barros" />
       </Head>
       <Provider rootStore={store}>
-        <ThemeProvider theme={theme === "dark" ? defaultTheme : lightTheme}>
+        <ThemeProvider theme={theme === "light" ? lightTheme : defaultTheme}>
           <GlobalStyle />
           <Component {...pageProps} />
         </ThemeProvider>

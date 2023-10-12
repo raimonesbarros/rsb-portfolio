@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react";
+import { observer } from "~/modules";
 import { MainTitle } from "~/pages/styles";
 import { useScroll, useStores } from "~/utils";
 import { dummy } from "~/utils/assets";
@@ -52,4 +53,4 @@ const Showcase: FC = () => {
   );
 };
 
-export default Showcase;
+export default observer(Showcase);

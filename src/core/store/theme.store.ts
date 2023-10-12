@@ -2,7 +2,7 @@ import { makeAutoObservable, makePersistable, runInAction } from "~/modules";
 import { defaultTheme, lightTheme } from "..";
 
 export default class ThemeStore {
-  mode: Mode = "light" as Mode;
+  mode: Mode = "" as Mode;
 
   theme: Theme = {} as Theme;
 
@@ -16,12 +16,12 @@ export default class ThemeStore {
 
   setTheme = () => {
     runInAction(() => {
-      if (this.mode === "dark") {
-        this.mode = "light";
-        this.theme = lightTheme;
-      } else {
+      if (this.mode === "light") {
         this.mode = "dark";
         this.theme = defaultTheme;
+      } else {
+        this.mode = "light";
+        this.theme = lightTheme;
       }
     });
   };
