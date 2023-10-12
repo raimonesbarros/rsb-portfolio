@@ -5,7 +5,7 @@ import { GlobalStyle, defaultTheme, lightTheme, store } from "~/core";
 import { Provider, ThemeProvider, observer } from "~/modules";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
-  const [theme, setTheme] = useState<Mode>();
+  const [theme, setTheme] = useState<Mode>("dark");
   const {
     themeStore: { mode },
   } = store;
