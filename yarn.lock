@@ -1498,6 +1498,22 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.3.tgz#c894a21e8c911830e36bbbba55903ccfbc7a7e25"
   integrity sha512-+ZplYUN3HOpgCfgInqgdDAbkGGVzES1cs32JJpeqoh87SkRobGXElJx+1GZSaDqzFL+bYiX18qEcBK76mYs8uA==
 
+"@formspree/core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.1.tgz#e04bdb59825ecaf727114d2f46eccc928b57ab20"
+  integrity sha512-jGNgrEtL8mx8k1kkmeNfyeoP1a+H2kci8TMG7CT3R5k3ssqr0Sl1j10SIKo74CFZVewMW4JjMYwcunWUPfutSQ==
+  dependencies:
+    "@stripe/stripe-js" "^1.35.0"
+
+"@formspree/react@2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.5.1.tgz#6e4fbff66a3c200365de8d54708b96510ff47702"
+  integrity sha512-Yhxyn32m3zH63i0DNpnBq55zargDlbihqC0wlK18dqU7GOUqJXKY+WywLXuTRGfqo79/hT+Qx6eFS6M0J6eh0A==
+  dependencies:
+    "@formspree/core" "^3.0.1"
+    "@stripe/react-stripe-js" "^1.7.1"
+    "@stripe/stripe-js" "^1.35.0"
+
 "@grpc/grpc-js@~1.9.0":
   version "1.9.5"
   resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.9.5.tgz#22e283754b7b10d1ad26c3fb21849028dcaabc53"
@@ -1515,6 +1531,11 @@
     long "^5.0.0"
     protobufjs "^7.2.4"
     yargs "^17.7.2"
+
+"@hookform/resolvers@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.3.2.tgz#5c40f06fe8137390b071d961c66d27ee8f76f3bc"
+  integrity sha512-Tw+GGPnBp+5DOsSg4ek3LCPgkBOuOgS5DsDV7qsWNH9LZc433kgsWICjlsh2J9p04H2K66hsXPPb9qn9ILdUtA==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
@@ -1769,6 +1790,18 @@
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.5.1.tgz#5f1b518ec5fa54437c0b7c4a821546c64fed6922"
   integrity sha512-6i/8UoL0P5y4leBIGzvkZdS85RDMG9y1ihZzmTZQ5LdHUYmZ7pKFoj8X0236s3lusPs1Fa5HTQUpwI+UfTcmeA==
+
+"@stripe/react-stripe-js@^1.7.1":
+  version "1.16.5"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.16.5.tgz#51cf862b50ca91ae6193c77a5bec889e81047f10"
+  integrity sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@stripe/stripe-js@^1.35.0":
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.54.2.tgz#0665848e22cbda936cfd05256facdfbba121438d"
+  integrity sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -6432,3 +6465,8 @@ zod@3.21.4:
   version "3.21.4"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.21.4.tgz#10882231d992519f0a10b5dd58a38c9dabbb64db"
   integrity sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==
+
+zod@3.22.4:
+  version "3.22.4"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.22.4.tgz#f31c3a9386f61b1f228af56faa9255e845cf3fff"
+  integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==
