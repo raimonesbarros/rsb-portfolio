@@ -1,3 +1,4 @@
+export { zodResolver } from "@hookform/resolvers/zod";
 export { formatDistanceToNow } from "date-fns";
 export { ptBR } from "date-fns/locale";
 export {
