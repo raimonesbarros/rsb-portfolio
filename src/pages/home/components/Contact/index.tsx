@@ -1,57 +1,36 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+import { useForm } from "@formspree/react";
 import { Subtitle } from "~/pages/components";
-import {
-  EnvelopeSimple,
-  InstagramLogo,
-  LinkedinLogo,
-  WhatsappLogo,
-} from "~/utils/assets";
-import {
-  ContactCard,
-  ContactContainer,
-  ContactSection,
-  ContactsList,
-  Link,
-  Strong,
-  Text,
-} from "./styles";
+import { ContactForm, ContactList } from "./components";
+import { ContactFormData } from "./components/ContactForm";
+import { ContactContainer, ContactSection, Status } from "./styles";
 
-const Contact: FC = () => (
-  <ContactSection id="contact">
-    <ContactContainer>
-      <Subtitle bold="Contatos" normal="meus" reverse />
-      <ContactsList>
-        <ContactCard>
-          <Link href="https://wa.link/vr2jtk">
-            <WhatsappLogo size={50} weight="thin" />
-            <Strong>WhatsApp</Strong>
-            <Text>63 9 9230-4536</Text>
-          </Link>
-        </ContactCard>
-        <ContactCard>
-          <Link href="mailto:raimonesrg3@gmail.com">
-            <EnvelopeSimple size={50} weight="thin" />
-            <Strong>Gmail</Strong>
-            <Text>raimonesrg3</Text>
-          </Link>
-        </ContactCard>
-        <ContactCard>
-          <Link href="https://www.linkedin.com/in/raimones-barros/">
-            <LinkedinLogo size={50} weight="thin" />
-            <Strong>Linkedin</Strong>
-            <Text>raimones-barros</Text>
-          </Link>
-        </ContactCard>
-        <ContactCard>
-          <Link href="https://www.instagram.com/silvabarross/">
-            <InstagramLogo size={50} weight="thin" />
-            <Strong>Instagram</Strong>
-            <Text>@silvabarross</Text>
-          </Link>
-        </ContactCard>
-      </ContactsList>
-    </ContactContainer>
-  </ContactSection>
-);
+const Contact: FC = () => {
+  const [state, handleSubmit] = useForm("xoqoydra");
+  const [success, setSuccess] = useState(false);
+
+  const sendToFormsPree = async (data: ContactFormData) => {
+    await handleSubmit(data);
+  };
+
+  useEffect(() => {
+    setSuccess(state.succeeded);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+  }, [state.succeeded]);
+
+  return (
+    <ContactSection id="contact">
+      <ContactContainer>
+        <Subtitle bold="Mensagem" normal="deixe uma" reverse />
+        {success && <Status>Mensagem enviada!</Status>}
+        <ContactForm onSendFormsPree={sendToFormsPree} />
+        <Subtitle bold="Contatos" normal="ou use os" reverse />
+        <ContactList />
+      </ContactContainer>
+    </ContactSection>
+  );
+};
 
 export default Contact;
