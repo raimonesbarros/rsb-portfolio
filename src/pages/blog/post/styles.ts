@@ -42,5 +42,24 @@ export const PostContent = styled.article`
 `;
 
 export const Markdown = styled(ReactMarkdown)`
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+  gap: 1rem;
+  overflow: hidden scroll;
   background-color: ${(p) => p.theme.background};
+
+  code,
+  pre {
+    color: #ffffff !important;
+    background-color: ${(p) => p.theme.gray300};
+    gap: 0rem;
+    user-select: text;
+    border-radius: 4px;
+    overflow: scroll;
+  }
+
+  pre {
+    padding: 0 1rem;
+  }
 `;
