@@ -11,7 +11,7 @@ export const PostContainer = styled.section`
 export const PostContent = styled.article`
   width: 100%;
 
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 0;
   font-size: 1.15rem;
 
   display: flex;
@@ -44,6 +44,7 @@ export const PostContent = styled.article`
 export const Markdown = styled(ReactMarkdown)`
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: 0 1.5rem;
   gap: 1rem;
   overflow: hidden scroll;
