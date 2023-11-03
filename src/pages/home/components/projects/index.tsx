@@ -19,8 +19,6 @@ const Projects: FC<Props> = ({
 }) => {
   return (
     <ProjectsSection id="projects">
-      <NextSeo {...SEOProjects} />
-      <MainTitle>Projetos desenvolvidos pelo desenvolvedor Raimones</MainTitle>
       <ProjectsContainer>
         <Subtitle bold="Projetos" normal="alguns" reverse />
         <ProjectsContent>
