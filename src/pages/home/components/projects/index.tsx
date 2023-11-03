@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { NextSeo, observer } from "~/modules";
-import { SEOProjects } from "~/utils";
+import { observer } from "~/modules";
 import { Subtitle } from "../../../components";
-import { MainTitle } from "../../../styles";
 import { ProjectsList, Viewer } from "./components";
 import { ProjectsContainer, ProjectsContent, ProjectsSection } from "./styles";
 
